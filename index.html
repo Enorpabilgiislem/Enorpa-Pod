@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENORPA — POD Formu</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #E8501A;
+    --orange-light: #FFF3EF;
+    --orange-mid: #FFE8DF;
+    --dark: #2B2B2B;
+    --gray1: #404040;
+    --gray2: #5A5A5A;
+    --gray3: #E8E8E8;
+    --gray4: #F4F4F4;
+    --mid: #6B6B6B;
+    --brown: #7A5C54;
+    --white: #ffffff;
+    --border: #D0D0D0;
+    --text: #1A1A1A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    background: #F0EFED;
+    color: var(--text);
+    font-size: 14px;
+    min-height: 100vh;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--dark);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px; height: 60px; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.3);
+  }
+  .topbar-logo { display: flex; align-items: center; gap: 12px; }
+  .topbar-logo .brand { font-size: 20px; font-weight: 700; color: var(--orange); letter-spacing: 2px; }
+  .topbar-logo .sub { font-size: 12px; color: #888; letter-spacing: 1px; }
+  .topbar-actions { display: flex; gap: 10px; }
+  .btn {
+    padding: 9px 22px; border-radius: 4px; font-size: 13px;
+    font-weight: 600; cursor: pointer; border: none; transition: all .2s;
+    font-family: inherit; letter-spacing: .5px;
+  }
+  .btn-ghost { background: transparent; color: #aaa; border: 1px solid #555; }
+  .btn-ghost:hover { border-color: #aaa; color: #fff; }
+  .btn-primary { background: var(--orange); color: #fff; }
+  .btn-primary:hover { background: #d44418; }
+  .btn-primary:active { transform: scale(.98); }
+
+  /* ── LAYOUT ── */
+  .layout { display: flex; min-height: calc(100vh - 60px); }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 220px; min-width: 220px; background: var(--dark);
+    padding: 24px 0; position: sticky; top: 60px;
+    height: calc(100vh - 60px); overflow-y: auto;
+  }
+  .sidebar-section { padding: 6px 0; }
+  .sidebar-label {
+    font-size: 10px; font-weight: 700; color: #666;
+    padding: 10px 20px 4px; letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .sidebar-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 20px; cursor: pointer; transition: all .15s;
+    color: #999; font-size: 13px; border-left: 3px solid transparent;
+    text-decoration: none;
+  }
+  .sidebar-item:hover { color: #eee; background: rgba(255,255,255,.05); }
+  .sidebar-item.active { color: #fff; border-left-color: var(--orange); background: rgba(232,80,26,.1); }
+  .sidebar-item .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--border); flex-shrink: 0;
+  }
+  .sidebar-item.active .dot { background: var(--orange); }
+  .sidebar-item.module-item { padding-left: 28px; font-size: 12px; }
+
+  /* ── MAIN ── */
+  .main { flex: 1; padding: 28px 32px; max-width: 1000px; }
+
+  /* ── SECTION ── */
+  .form-section { margin-bottom: 20px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+
+  .section-header {
+    display: flex; align-items: center; gap: 0;
+    background: var(--gray1); min-height: 44px;
+  }
+  .section-header .accent { width: 5px; min-height: 44px; background: var(--orange); flex-shrink: 0; }
+  .section-header h2 {
+    padding: 10px 16px; font-size: 13px; font-weight: 700;
+    color: #fff; letter-spacing: .8px; text-transform: uppercase;
+  }
+
+  .module-header {
+    display: flex; align-items: center; min-height: 44px; background: var(--brown);
+  }
+  .module-header .accent { width: 5px; min-height: 44px; background: var(--orange); flex-shrink: 0; }
+  .module-header h2 {
+    padding: 10px 16px; font-size: 13px; font-weight: 700;
+    color: #fff; letter-spacing: .8px; text-transform: uppercase;
+  }
+  .module-header .remove-btn {
+    margin-left: auto; margin-right: 12px;
+    background: rgba(255,255,255,.12); border: none; color: #ddd;
+    padding: 4px 10px; border-radius: 3px; font-size: 11px;
+    cursor: pointer; transition: all .15s; font-family: inherit;
+  }
+  .module-header .remove-btn:hover { background: rgba(255,80,80,.3); color: #fff; }
+
+  .section-body { background: #fff; }
+
+  /* ── ROWS ── */
+  .form-row {
+    display: flex; align-items: stretch; border-bottom: 1px solid var(--border);
+    min-height: 38px;
+  }
+  .form-row:last-child { border-bottom: none; }
+  .form-row.alt { background: var(--gray4); }
+
+  .field-label {
+    width: 240px; min-width: 240px; padding: 8px 12px;
+    font-size: 12px; color: var(--mid); font-weight: 500;
+    background: var(--gray3); border-right: 1px solid var(--border);
+    display: flex; align-items: center;
+  }
+  .field-label.full { width: auto; flex: 1; }
+  .field-value { flex: 1; display: flex; align-items: center; }
+
+  .field-input {
+    width: 100%; border: none; outline: none; padding: 8px 12px;
+    font-size: 13px; font-family: inherit; color: var(--text);
+    background: transparent; resize: none;
+  }
+  .field-input:focus { background: #FFFAF8; }
+  textarea.field-input { padding-top: 8px; min-height: 60px; }
+
+  /* ── CHECKBOX GROUP ── */
+  .checkbox-group { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 12px; align-items: center; }
+  .cb-label {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 13px; color: var(--text); cursor: pointer;
+    padding: 3px 8px; border-radius: 3px;
+    transition: background .15s; user-select: none;
+  }
+  .cb-label:hover { background: var(--gray4); }
+  .cb-label input[type=checkbox] { accent-color: var(--orange); width: 14px; height: 14px; cursor: pointer; }
+
+  /* ── TWO-COL ROW ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; }
+  .two-col .field-label { width: 160px; min-width: 160px; }
+  .two-col .col { display: flex; align-items: stretch; border-right: 1px solid var(--border); }
+  .two-col .col:last-child { border-right: none; }
+
+  /* ── PRICE ROW ── */
+  .price-row { background: var(--orange-light) !important; }
+  .price-row .field-label { background: var(--orange-light); }
+  .price-label { font-weight: 700; color: var(--orange) !important; }
+
+  /* ── KAZAN NO ── */
+  .kazan-label {
+    background: #F0F0F0; padding: 6px 16px; font-size: 12px;
+    font-weight: 700; color: var(--gray2); font-style: italic;
+    border-bottom: 1px solid var(--border);
+  }
+  .kazan-sep { height: 8px; background: #DDD; border-bottom: 1px solid var(--border); }
+
+  /* ── SORU ── */
+  .soru-section { background: #FFF3EF; border: 1px solid #F0C0A8; border-radius: 6px;
+    padding: 16px 20px; margin-bottom: 20px; }
+  .soru-title { font-size: 13px; font-weight: 700; color: var(--gray1); margin-bottom: 10px; }
+  .soru-text { font-size: 14px; color: var(--gray1); margin-bottom: 10px; }
+  .soru-text strong { color: var(--orange); }
+  .soru-note { font-size: 12px; color: var(--mid); margin-top: 8px; font-style: italic; }
+
+  /* ── ÖDEME TABLOSU ── */
+  .odeme-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .odeme-table th {
+    background: var(--gray2); color: #fff; padding: 8px 6px;
+    text-align: center; font-weight: 600; border: 1px solid #888;
+  }
+  .odeme-table th:first-child { width: 32px; }
+  .odeme-table td { border: 1px solid var(--border); padding: 0; }
+  .odeme-table tr:nth-child(even) td { background: var(--gray4); }
+  .odeme-table tr:nth-child(odd) td { background: #fff; }
+  .odeme-table input[type=text] {
+    width: 100%; border: none; outline: none; background: transparent;
+    padding: 7px 6px; font-size: 12px; font-family: inherit; text-align: center;
+  }
+  .odeme-table input[type=text]:focus { background: #FFFAF8; }
+  .odeme-table .taksit-no {
+    font-weight: 700; color: var(--gray1); text-align: center;
+    padding: 8px 4px; font-size: 13px;
+  }
+  .odeme-cb { display: flex; gap: 8px; padding: 6px 6px; justify-content: center; flex-wrap: wrap; }
+  .odeme-cb label { display: flex; align-items: center; gap: 3px; font-size: 12px; cursor: pointer; }
+  .odeme-cb input { accent-color: var(--orange); }
+  .diger-input { width: 80px !important; border-bottom: 1px solid var(--border) !important; }
+
+  /* ── IMZA ── */
+  .imza-row { display: grid; grid-template-columns: 1fr 1fr; }
+  .imza-cell {
+    padding: 12px; border-right: 1px solid var(--border);
+    min-height: 90px; display: flex; flex-direction: column;
+  }
+  .imza-cell:last-child { border-right: none; }
+  .imza-title { font-weight: 700; font-size: 12px; color: var(--gray1); margin-bottom: 8px; text-align: center; }
+  .imza-line { border-bottom: 1px solid var(--border); margin-top: auto; }
+
+  /* ── ONAY NOTU ── */
+  .onay-note {
+    background: var(--gray4); padding: 10px 14px;
+    font-size: 12px; color: var(--mid); font-style: italic;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── PROGRESS ── */
+  .progress-bar {
+    height: 3px; background: var(--gray3);
+    position: sticky; top: 60px; z-index: 99;
+  }
+  .progress-fill {
+    height: 100%; background: var(--orange);
+    transition: width .4s ease; width: 0%;
+  }
+
+  /* ── PDF LOADING ── */
+  .pdf-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,.6); z-index: 1000;
+    align-items: center; justify-content: center;
+    flex-direction: column; gap: 16px;
+  }
+  .pdf-overlay.show { display: flex; }
+  .pdf-spinner {
+    width: 44px; height: 44px; border: 4px solid rgba(255,255,255,.2);
+    border-top-color: var(--orange); border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .pdf-text { color: #fff; font-size: 14px; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
+
+  /* ── SIDEBAR +/- BUTTONS ── */
+  .mod-row { display:flex; align-items:center; justify-content:space-between; padding:6px 14px 6px 20px; }
+  .mod-row-name { font-size:12px; color:#bbb; flex:1; }
+  .mod-counter { display:flex; align-items:center; gap:5px; }
+  .mod-btn { width:22px; height:22px; border-radius:4px; border:none; font-size:15px; font-weight:700;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .15s;
+    font-family:inherit; line-height:1; }
+  .mod-btn-minus { background:rgba(255,255,255,.08); color:#888; }
+  .mod-btn-minus:hover:not([disabled]) { background:rgba(255,80,80,.25); color:#ff9999; }
+  .mod-btn-plus  { background:rgba(232,80,26,.2); color:var(--orange); }
+  .mod-btn-plus:hover  { background:rgba(232,80,26,.4); color:#fff; }
+  .mod-count { font-size:13px; color:#fff; font-weight:700; min-width:16px; text-align:center; }
+
+
+
+  /* ── SIDEBAR MODULE ITEMS (dynamic) ── */
+  .sidebar-module-item {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 16px 8px 28px; font-size: 12px; color: #aaa;
+    cursor: pointer; transition: all .15s; border-left: 3px solid transparent;
+    text-decoration: none;
+  }
+  .sidebar-module-item:hover { color: #eee; background: rgba(255,255,255,.04); }
+  .sidebar-module-item .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+
+  /* ── PDF SAYFA KIRMA ── */
+  .pdf-page-break { display: none; }
+  @media print { .pdf-page-break { display: block; page-break-before: always; } }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-logo">
+    <span class="brand">ENORPA</span>
+    <span class="sub">POD FORMU</span>
+  </div>
+  <div class="topbar-actions">
+    <button class="btn btn-ghost" onclick="clearForm()">Temizle</button>
+    <button class="btn btn-primary" onclick="generatePDF()">⬇ PDF İndir</button>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-label">Form Bölümleri</div>
+    <a class="sidebar-item active" href="#genel"><span class="dot"></span>Genel Bilgiler</a>
+    <a class="sidebar-item" href="#firma"><span class="dot"></span>Firma Bilgileri</a>
+    <a class="sidebar-item" href="#soru"><span class="dot"></span>Proje Türü Sorusu</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Satış Türleri</div>
+    <div id="sidebar-modules"></div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Diğer Bölümler</div>
+    <a class="sidebar-item" href="#odeme"><span class="dot"></span>Ödeme Planı</a>
+    <a class="sidebar-item" href="#teslimat"><span class="dot"></span>Teslimat Koşulları</a>
+    <a class="sidebar-item" href="#isi"><span class="dot"></span>Isı Kaynağı</a>
+    <a class="sidebar-item" href="#ekipman"><span class="dot"></span>Dahil Ekipmanlar</a>
+    <a class="sidebar-item" href="#ekstra"><span class="dot"></span>Ek Bilgiler</a>
+    <a class="sidebar-item" href="#onay"><span class="dot"></span>Onay ve İmza</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main" id="main">
+
+<!-- PDF HEADER (sadece PDF'de görünür, ekranda gizli) -->
+<div id="pdf-header" style="display:none;background:#fff;margin-bottom:16px;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08)">
+  <table style="width:100%;border-collapse:collapse">
+    <tr>
+      <td style="width:50%;background:#fff;padding:14px 20px;vertical-align:middle">
+        <div style="font-size:28px;font-weight:700;color:#E8501A;letter-spacing:3px;font-family:Segoe UI,sans-serif">ENORPA</div>
+        <div style="font-size:11px;color:#888;letter-spacing:1px;font-family:Segoe UI,sans-serif;margin-top:2px">ENERJİ SİSTEMLERİ</div>
+      </td>
+      <td style="width:50%;background:#2B2B2B;padding:14px 20px;vertical-align:middle;text-align:center">
+        <div style="font-size:22px;font-weight:700;color:#fff;font-family:Segoe UI,sans-serif;letter-spacing:2px">POD FORMU</div>
+        <div style="font-size:11px;color:#aaa;font-family:Segoe UI,sans-serif;margin-top:4px;font-style:italic">Proje Onay Dokümanı</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- GENEL BİLGİLER -->
+<div class="form-section" id="genel">
+  <div class="section-header"><div class="accent"></div><h2>Genel Bilgiler</h2></div>
+  <div class="section-body">
+    <div class="form-row"><div class="field-label">Teklif No / Proje No:</div><div class="field-value"><input class="field-input" type="text" id="teklif_no"></div></div>
+    <div class="form-row alt"><div class="field-label">POD Revizyon No / Tarih:</div><div class="field-value"><input class="field-input" type="text" id="revizyon"></div></div>
+    <div class="form-row"><div class="field-label">Proje Yeri / Onaylanma Tarihi:</div><div class="field-value"><input class="field-input" type="text" id="proje_yeri"></div></div>
+    <div class="form-row alt"><div class="field-label">POD Gönderilme Tarihi:</div><div class="field-value"><input class="field-input" type="date" id="gonderilme_tarihi"></div></div>
+    <div class="form-row"><div class="field-label">ENORPA Yetkilisi / Firma Yetkilisi:</div><div class="field-value"><input class="field-input" type="text" id="yetkililer"></div></div>
+  </div>
+</div>
+
+<!-- FİRMA BİLGİLERİ -->
+<div class="form-section" id="firma">
+  <div class="section-header"><div class="accent"></div><h2>Alıcı Firma Cari Bilgileri</h2></div>
+  <div class="section-body">
+    <div class="form-row"><div class="field-label">Firma Adı:</div><div class="field-value"><input class="field-input" type="text" id="firma_adi"></div></div>
+    <div class="form-row alt"><div class="field-label">Adres:</div><div class="field-value"><input class="field-input" type="text" id="adres"></div></div>
+    <div class="form-row"><div class="field-label">Vergi Dairesi / Numarası:</div><div class="field-value"><input class="field-input" type="text" id="vergi"></div></div>
+    <div class="form-row alt two-col">
+      <div class="col"><div class="field-label">Telefon:</div><div class="field-value"><input class="field-input" type="text" id="tel"></div></div>
+      <div class="col"><div class="field-label">Fax:</div><div class="field-value"><input class="field-input" type="text" id="fax"></div></div>
+    </div>
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">GSM:</div><div class="field-value"><input class="field-input" type="text" id="gsm"></div></div>
+      <div class="col"><div class="field-label">Mail:</div><div class="field-value"><input class="field-input" type="email" id="mail"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJE TÜRÜ SORUSU -->
+<div class="soru-section" id="soru">
+  <div class="soru-title">PROJE TÜRÜ SORUSU</div>
+  <div class="soru-text">Bu proje <strong>anahtar teslim</strong> mi? <span style="color:var(--mid);font-size:13px">(kazan + tesisat + montaj birlikte teslim)</span></div>
+  <div class="checkbox-group" style="padding:0;gap:20px">
+    <label class="cb-label"><input type="radio" name="anahtar" value="evet" style="accent-color:var(--orange)"> <strong>Evet</strong></label>
+    <label class="cb-label"><input type="radio" name="anahtar" value="hayir" style="accent-color:var(--orange)"> <strong>Hayır</strong></label>
+  </div>
+  <div class="soru-note">Evet ise: ilgili tüm modülleri doldurun. Hayır ise: yalnızca satış türüne ait modülü doldurun.</div>
+</div>
+
+<!-- KAZAN SATIŞI -->
+<div class="form-section" id="kazan" data-module="true" style="display:none">
+  <div class="module-header"><div class="accent"></div><h2>Kazan Satışı</h2></div>
+  <div class="section-body">
+    <div class="kazan-label">Kazan #1</div>
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Kazan Modeli:</div><div class="field-value"><input class="field-input" type="text" id="k1_model"></div></div>
+      <div class="col"><div class="field-label">Kapasite (kcal/h):</div><div class="field-value"><input class="field-input" type="text" id="k1_kapasite"></div></div>
+    </div>
+    <div class="form-row alt two-col">
+      <div class="col"><div class="field-label">Yakıt Türü:</div><div class="field-value"><input class="field-input" type="text" id="k1_yakit"></div></div>
+      <div class="col"><div class="field-label">Adet:</div><div class="field-value"><input class="field-input" type="text" id="k1_adet"></div></div>
+    </div>
+    <div class="form-row price-row two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="k1_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="k1_toplam"></div></div>
+    </div>
+    <div class="kazan-sep"></div>
+    <div class="kazan-label">Kazan #2</div>
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Kazan Modeli:</div><div class="field-value"><input class="field-input" type="text" id="k2_model"></div></div>
+      <div class="col"><div class="field-label">Kapasite (kcal/h):</div><div class="field-value"><input class="field-input" type="text" id="k2_kapasite"></div></div>
+    </div>
+    <div class="form-row alt two-col">
+      <div class="col"><div class="field-label">Yakıt Türü:</div><div class="field-value"><input class="field-input" type="text" id="k2_yakit"></div></div>
+      <div class="col"><div class="field-label">Adet:</div><div class="field-value"><input class="field-input" type="text" id="k2_adet"></div></div>
+    </div>
+    <div class="form-row price-row two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="k2_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="k2_toplam"></div></div>
+    </div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="kazan_notlar" rows="3"></textarea></div></div>
+  </div>
+</div>
+
+<!-- MALZEME SATIŞI -->
+<div class="form-section" id="malzeme" data-module="true" style="display:none">
+  <div class="module-header"><div class="accent"></div><h2>Malzeme Satışı</h2><button class="remove-btn" onclick="toggleModule('malzeme')">✕ Kaldır</button></div>
+  <div class="section-body">
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Malzeme Türü:</div><div class="field-value"><input class="field-input" type="text" id="malz_tur"></div></div>
+      <div class="col"><div class="field-label">Marka / Model:</div><div class="field-value"><input class="field-input" type="text" id="malz_marka"></div></div>
+    </div>
+    <div class="form-row alt two-col">
+      <div class="col"><div class="field-label">Miktar / Birim:</div><div class="field-value"><input class="field-input" type="text" id="malz_miktar"></div></div>
+      <div class="col"><div class="field-label">Teknik Özellik:</div><div class="field-value"><input class="field-input" type="text" id="malz_teknik"></div></div>
+    </div>
+    <div class="form-row price-row two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="malz_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="malz_toplam"></div></div>
+    </div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="malz_notlar" rows="3"></textarea></div></div>
+  </div>
+</div>
+
+<!-- SERA TESİSATI -->
+<div class="form-section" id="sera-tesisat" data-module="true" style="display:none">
+  <div class="module-header"><div class="accent"></div><h2>Sera Tesisatı</h2><button class="remove-btn" onclick="toggleModule('sera-tesisat')">✕ Kaldır</button></div>
+  <div class="section-body">
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Tesisat Türü:</div><div class="field-value"><input class="field-input" type="text" id="st_tur"></div></div>
+      <div class="col"><div class="field-label">Alan (m²):</div><div class="field-value"><input class="field-input" type="text" id="st_alan"></div></div>
+    </div>
+    <div class="form-row price-row alt two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="st_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="st_toplam"></div></div>
+    </div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="st_notlar" rows="3"></textarea></div></div>
+  </div>
+</div>
+
+<!-- SERVİS HİZMETİ -->
+<div class="form-section" id="servis" data-module="true" style="display:none">
+  <div class="module-header"><div class="accent"></div><h2>Servis Hizmeti</h2><button class="remove-btn" onclick="toggleModule('servis')">✕ Kaldır</button></div>
+  <div class="section-body">
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Servis Türü:</div><div class="field-value"><input class="field-input" type="text" id="sv_tur"></div></div>
+      <div class="col"><div class="field-label">Süre / Kapsam:</div><div class="field-value"><input class="field-input" type="text" id="sv_sure"></div></div>
+    </div>
+    <div class="form-row price-row alt two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="sv_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="sv_toplam"></div></div>
+    </div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="sv_notlar" rows="3"></textarea></div></div>
+  </div>
+</div>
+
+<!-- YEDEK PARÇA -->
+<div class="form-section" id="yedek" data-module="true" style="display:none">
+  <div class="module-header"><div class="accent"></div><h2>Yedek Parça Hizmeti</h2><button class="remove-btn" onclick="toggleModule('yedek')">✕ Kaldır</button></div>
+  <div class="section-body">
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Parça Adı / Kodu:</div><div class="field-value"><input class="field-input" type="text" id="yp_parca"></div></div>
+      <div class="col"><div class="field-label">Adet:</div><div class="field-value"><input class="field-input" type="text" id="yp_adet"></div></div>
+    </div>
+    <div class="form-row price-row alt two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="yp_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="yp_toplam"></div></div>
+    </div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="yp_notlar" rows="3"></textarea></div></div>
+  </div>
+</div>
+
+<!-- SERVİS + YEDEK PARÇA -->
+<div class="form-section" id="servis-yedek" data-module="true" style="display:none">
+  <div class="module-header"><div class="accent"></div><h2>Servis + Yedek Parça Hizmeti</h2><button class="remove-btn" onclick="toggleModule('servis-yedek')">✕ Kaldır</button></div>
+  <div class="section-body">
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Servis Detayı:</div><div class="field-value"><input class="field-input" type="text" id="sy_detay"></div></div>
+      <div class="col"><div class="field-label">Parça Adı / Kodu:</div><div class="field-value"><input class="field-input" type="text" id="sy_parca"></div></div>
+    </div>
+    <div class="form-row alt two-col">
+      <div class="col"><div class="field-label">Süre / Kapsam:</div><div class="field-value"><input class="field-input" type="text" id="sy_sure"></div></div>
+      <div class="col"><div class="field-label">Adet:</div><div class="field-value"><input class="field-input" type="text" id="sy_adet"></div></div>
+    </div>
+    <div class="form-row price-row two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="sy_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="sy_toplam"></div></div>
+    </div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="sy_notlar" rows="3"></textarea></div></div>
+  </div>
+</div>
+
+<!-- PROJE HİZMETİ -->
+<div class="form-section" id="proje" data-module="true" style="display:none">
+  <div class="module-header"><div class="accent"></div><h2>Proje Hizmeti</h2><button class="remove-btn" onclick="toggleModule('proje')">✕ Kaldır</button></div>
+  <div class="section-body">
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Proje Türü:</div><div class="field-value"><input class="field-input" type="text" id="ph_tur"></div></div>
+      <div class="col"><div class="field-label">Kapsam:</div><div class="field-value"><input class="field-input" type="text" id="ph_kapsam"></div></div>
+    </div>
+    <div class="form-row price-row alt two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="ph_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="ph_toplam"></div></div>
+    </div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="ph_notlar" rows="3"></textarea></div></div>
+  </div>
+</div>
+
+<!-- KEŞİF HİZMETİ -->
+<div class="form-section" id="kesif" data-module="true" style="display:none">
+  <div class="module-header"><div class="accent"></div><h2>Keşif Hizmeti</h2><button class="remove-btn" onclick="toggleModule('kesif')">✕ Kaldır</button></div>
+  <div class="section-body">
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Keşif Bölgesi:</div><div class="field-value"><input class="field-input" type="text" id="kh_bolge"></div></div>
+      <div class="col"><div class="field-label">Tarih:</div><div class="field-value"><input class="field-input" type="date" id="kh_tarih"></div></div>
+    </div>
+    <div class="form-row price-row alt two-col">
+      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="kh_birim"></div></div>
+      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="kh_toplam"></div></div>
+    </div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="kh_notlar" rows="3"></textarea></div></div>
+  </div>
+</div>
+
+<!-- ÖDEME PLANI -->
+<div class="form-section" id="odeme">
+  <div class="section-header"><div class="accent"></div><h2>Ödeme Planı</h2></div>
+  <div class="section-body">
+    <div class="form-row">
+      <div class="field-label">KDV Durumu:</div>
+      <div class="field-value">
+        <div class="checkbox-group">
+          <label class="cb-label"><input type="checkbox" id="kdv_ihracat"> İhracat</label>
+          <label class="cb-label"><input type="checkbox" id="kdv_ihrac"> İhraç Kayıtlı</label>
+          <label class="cb-label"><input type="checkbox" id="kdv_yatirim"> Yatırım Teşvikli</label>
+          <label class="cb-label"><input type="checkbox" id="kdv_kdvli"> KDV'li</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-row alt"><div class="field-label">Toplam Anlaşma Tutarı (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="anlasma_tutari"></div></div>
+    <div class="form-row" style="padding:0;display:block">
+      <table class="odeme-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Oran %</th><th>Tutar</th>
+            <th>Ödeme Yöntemi</th><th>Vade / Koşul</th><th>Çek Tarihi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="taksit-no">1.</td>
+            <td><input type="text" id="o1_oran" placeholder="%"></td>
+            <td><input type="text" id="o1_tutar"></td>
+            <td><div class="odeme-cb">
+              <label><input type="checkbox" id="o1_h"> Havale</label>
+              <label><input type="checkbox" id="o1_c"> Çek</label>
+              <label><input type="checkbox" id="o1_d"> Diğer:</label>
+              <input type="text" id="o1_diger" class="diger-input" placeholder="...">
+            </div></td>
+            <td><input type="text" id="o1_vade"></td>
+            <td><input type="text" id="o1_cek_tarihi" placeholder="gg.aa.yyyy"></td>
+          </tr>
+          <tr>
+            <td class="taksit-no">2.</td>
+            <td><input type="text" id="o2_oran" placeholder="%"></td>
+            <td><input type="text" id="o2_tutar"></td>
+            <td><div class="odeme-cb">
+              <label><input type="checkbox" id="o2_h"> Havale</label>
+              <label><input type="checkbox" id="o2_c"> Çek</label>
+              <label><input type="checkbox" id="o2_d"> Diğer:</label>
+              <input type="text" id="o2_diger" class="diger-input" placeholder="...">
+            </div></td>
+            <td><input type="text" id="o2_vade"></td>
+            <td><input type="text" id="o2_cek_tarihi" placeholder="gg.aa.yyyy"></td>
+          </tr>
+          <tr>
+            <td class="taksit-no">3.</td>
+            <td><input type="text" id="o3_oran" placeholder="%"></td>
+            <td><input type="text" id="o3_tutar"></td>
+            <td><div class="odeme-cb">
+              <label><input type="checkbox" id="o3_h"> Havale</label>
+              <label><input type="checkbox" id="o3_c"> Çek</label>
+              <label><input type="checkbox" id="o3_d"> Diğer:</label>
+              <input type="text" id="o3_diger" class="diger-input" placeholder="...">
+            </div></td>
+            <td><input type="text" id="o3_vade"></td>
+            <td><input type="text" id="o3_cek_tarihi" placeholder="gg.aa.yyyy"></td>
+          </tr>
+          <tr>
+            <td class="taksit-no">4.</td>
+            <td><input type="text" id="o4_oran" placeholder="%"></td>
+            <td><input type="text" id="o4_tutar"></td>
+            <td><div class="odeme-cb">
+              <label><input type="checkbox" id="o4_h"> Havale</label>
+              <label><input type="checkbox" id="o4_c"> Çek</label>
+              <label><input type="checkbox" id="o4_d"> Diğer:</label>
+              <input type="text" id="o4_diger" class="diger-input" placeholder="...">
+            </div></td>
+            <td><input type="text" id="o4_vade"></td>
+            <td><input type="text" id="o4_cek_tarihi" placeholder="gg.aa.yyyy"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- TESLİMAT KOŞULLARI -->
+<div class="form-section" id="teslimat">
+  <div class="section-header"><div class="accent"></div><h2>Teslimat Koşulları</h2></div>
+  <div class="section-body">
+    <div class="form-row"><div class="field-label">Termin Süresi:</div><div class="field-value"><input class="field-input" type="text" id="termin"></div></div>
+    <div class="form-row alt"><div class="field-label">Nakliye Ödemesi:</div><div class="field-value"><div class="checkbox-group"><label class="cb-label"><input type="radio" name="nakliye_odeme"> Enorpa Enerji</label><label class="cb-label"><input type="radio" name="nakliye_odeme"> Alıcı</label></div></div></div>
+    <div class="form-row"><div class="field-label">Nakliye Organizasyonu:</div><div class="field-value"><div class="checkbox-group"><label class="cb-label"><input type="radio" name="nakliye_org"> Enorpa Enerji</label><label class="cb-label"><input type="radio" name="nakliye_org"> Alıcı</label></div></div></div>
+    <div class="form-row alt"><div class="field-label">Kazan Montajı:</div><div class="field-value"><div class="checkbox-group"><label class="cb-label"><input type="radio" name="kazan_montaj"> Enorpa Enerji</label><label class="cb-label"><input type="radio" name="kazan_montaj"> Alıcı</label><label class="cb-label"><input type="radio" name="kazan_montaj"> Alıcı + Süpervizör</label></div></div></div>
+    <div class="form-row"><div class="field-label">Isı Merkezi Tesisat Montajı:</div><div class="field-value"><div class="checkbox-group"><label class="cb-label"><input type="radio" name="isi_montaj"> Enorpa Enerji</label><label class="cb-label"><input type="radio" name="isi_montaj"> Alıcı</label><label class="cb-label"><input type="radio" name="isi_montaj"> Alıcı + Süpervizör</label><label class="cb-label"><input type="radio" name="isi_montaj"> Taşeron Ekip</label></div></div></div>
+    <div class="form-row alt"><div class="field-label">Montaj Anlaşma Şartı:</div><div class="field-value"><input class="field-input" type="text" id="montaj_sart"></div></div>
+    <div class="form-row"><div class="field-label">Süpervizör Hizmeti Süresi:</div><div class="field-value"><input class="field-input" type="text" id="superv_sure"></div></div>
+    <div class="form-row alt"><div class="field-label">Sera Tesisatı İşçiliği:</div><div class="field-value"><div class="checkbox-group"><label class="cb-label"><input type="radio" name="sera_iscilik"> Alıcı</label><label class="cb-label"><input type="radio" name="sera_iscilik"> Taşeron Ekip</label></div></div></div>
+    <div class="form-row"><div class="field-label">İşçilik Anlaşma Şartı:</div><div class="field-value"><input class="field-input" type="text" id="iscilik_sart"></div></div>
+  </div>
+</div>
+
+<!-- ISI KAYNAĞI -->
+<div class="form-section" id="isi">
+  <div class="section-header"><div class="accent"></div><h2>Isı Kaynağı Bilgileri</h2></div>
+  <div class="section-body">
+    <div class="form-row"><div class="field-label">Isı Kaynağı Türü:</div><div class="field-value"><div class="checkbox-group">
+      <label class="cb-label"><input type="checkbox"> Sıcak Su Kazanı</label>
+      <label class="cb-label"><input type="checkbox"> Kızgın Su Kazanı</label>
+      <label class="cb-label"><input type="checkbox"> Sıcak Hava Kazanı</label>
+      <label class="cb-label"><input type="checkbox"> Buhar Kazanı</label>
+      <label class="cb-label"><input type="checkbox"> Buhar Jeneratörü</label>
+      <label class="cb-label"><input type="checkbox"> Eşanjör</label>
+    </div></div></div>
+    <div class="form-row alt"><div class="field-label">Belgelendirme:</div><div class="field-value"><div class="checkbox-group"><label class="cb-label"><input type="radio" name="belge"> Var</label><label class="cb-label"><input type="radio" name="belge"> Yok</label></div></div></div>
+    <div class="form-row"><div class="field-label">Var ise Açıklayınız:</div><div class="field-value"><input class="field-input" type="text" id="belge_aciklama"></div></div>
+    <div class="form-row alt"><div class="field-label">Kazan Modeli:</div><div class="field-value"><div class="checkbox-group" style="flex-wrap:wrap;gap:4px">
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Akuamarin</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Turkuaz</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Kalsedon</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Ametist</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Oniks</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Obsidyen</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Has Turbo</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Has</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Has NG</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Kuvars</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Kuvars NG</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Turmalin</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Ametrin</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Jasper</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Safir</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Eşanjör</label>
+      <label class="cb-label" style="font-size:12px"><input type="checkbox"> Diğer</label>
+    </div></div></div>
+    <div class="form-row two-col">
+      <div class="col"><div class="field-label">Kapasite / Basınç:</div><div class="field-value"><input class="field-input" type="text" id="isi_kapasite"></div></div>
+      <div class="col"><div class="field-label">Isı Kaynağı Miktarı:</div><div class="field-value"><input class="field-input" type="text" id="isi_miktar"></div></div>
+    </div>
+    <div class="form-row alt"><div class="field-label">Yakıt Türü:</div><div class="field-value"><div class="checkbox-group">
+      <label class="cb-label"><input type="checkbox"> *Katı</label>
+      <label class="cb-label"><input type="checkbox"> Gaz</label>
+      <label class="cb-label"><input type="checkbox"> Sıvı</label>
+      <label class="cb-label"><input type="checkbox"> Sıvı/Gaz</label>
+      <label class="cb-label"><input type="checkbox"> *Biokütle</label>
+    </div></div></div>
+    <div class="form-row"><div class="field-label" style="font-size:11px;font-style:italic;color:#aaa">* Yakıt analizi ve numunesi talep edilmelidir</div><div class="field-value"><input class="field-input" type="text" id="yakit_detay" placeholder="Yakıt detayı..."></div></div>
+  </div>
+</div>
+
+<!-- EK BİLGİLER -->
+<div class="form-section" id="ekstra">
+  <div class="section-header"><div class="accent"></div><h2>Ek Bilgiler ve Notlar</h2></div>
+  <div class="section-body">
+    <div class="form-row"><div class="field-label">POD Revize Sebebi:</div><div class="field-value"><textarea class="field-input" id="revize_sebebi" rows="4"></textarea></div></div>
+    <div class="form-row alt"><div class="field-label">Ekstra Bilgiler:</div><div class="field-value"><textarea class="field-input" id="ekstra_bilgi" rows="4"></textarea></div></div>
+  </div>
+</div>
+
+<!-- ONAY VE İMZA -->
+<div class="form-section" id="onay">
+  <div class="section-header"><div class="accent"></div><h2>Onay ve İmza</h2></div>
+  <div class="section-body">
+    <div class="onay-note">Vermiş olduğum bilgilerin doğruluğunu ve eksiksizliğini onaylar; aksi olması durumunda tüm sorumluluğu kabul ettiğimi beyan ve taahhüt ederim. Yetkili imzası olmayan POD formları işleme alınmayacaktır.</div>
+    <div class="imza-row">
+      <div class="imza-cell">
+        <div class="imza-title">Alıcı Firma — Yetkili İmza / Kaşe</div>
+        <div class="imza-line"></div>
+      </div>
+      <div class="imza-cell">
+        <div class="imza-title">ENORPA Yetkilisi — İmza / Kaşe</div>
+        <div class="imza-line"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+</div>
+
+<!-- PDF OVERLAY -->
+<div class="pdf-overlay" id="pdfOverlay">
+  <div class="pdf-spinner"></div>
+  <div class="pdf-text">PDF oluşturuluyor...</div>
+</div>
+
+<script>
+// ── SIDEBAR ACTIVE ──
+const sections = document.querySelectorAll('.form-section, .soru-section');
+const sidebarLinks = document.querySelectorAll('.sidebar-item');
+const progressFill = document.getElementById('progress');
+
+function updateSidebar() {
+  let current = '';
+  sections.forEach(s => {
+    const rect = s.getBoundingClientRect();
+    if (rect.top <= 120) current = s.id;
+  });
+  sidebarLinks.forEach(link => {
+    const href = link.getAttribute('href').replace('#','');
+    link.classList.toggle('active', href === current);
+  });
+}
+
+function updateProgress() {
+  const scrolled = window.scrollY;
+  const total = document.body.scrollHeight - window.innerHeight;
+  progressFill.style.width = Math.min(100, (scrolled / total) * 100) + '%';
+}
+
+window.addEventListener('scroll', () => { updateSidebar(); updateProgress(); });
+
+// ── MODULE SYSTEM ──
+const MODULE_LIST = [
+  { id: 'kazan',       name: 'Kazan Satışı' },
+  { id: 'malzeme',     name: 'Malzeme Satışı' },
+  { id: 'sera-tesisat',name: 'Sera Tesisatı' },
+  { id: 'servis',      name: 'Servis Hizmeti' },
+  { id: 'yedek',       name: 'Yedek Parça Hizmeti' },
+  { id: 'servis-yedek',name: 'Servis + Yedek Parça' },
+  { id: 'proje',       name: 'Proje Hizmeti' },
+  { id: 'kesif',       name: 'Keşif Hizmeti' },
+];
+
+const moduleInstances = new Map(); // iid → { templateId, name, el }
+let instanceCounter = 0;
+
+function countInstances(templateId) {
+  let n = 0;
+  moduleInstances.forEach(inst => { if (inst.templateId === templateId) n++; });
+  return n;
+}
+
+function getModuleContainer() {
+  let c = document.getElementById('module-container');
+  if (!c) {
+    c = document.createElement('div');
+    c.id = 'module-container';
+    const soru = document.getElementById('soru');
+    soru.parentNode.insertBefore(c, soru.nextSibling);
+  }
+  return c;
+}
+
+function addModuleInstance(templateId) {
+  const meta = MODULE_LIST.find(m => m.id === templateId);
+  const template = document.getElementById(templateId);
+  if (!meta || !template) return;
+
+  const iid = 'inst_' + (++instanceCounter);
+  const count = countInstances(templateId);
+  const label = count > 0 ? `${meta.name} #${count + 1}` : meta.name;
+
+  const clone = template.cloneNode(true);
+  clone.id = iid;
+  clone.setAttribute('data-template', templateId);
+  clone.style.display = '';
+  clone.style.marginBottom = '16px';
+
+  // wrapper → tag + clone sırasıyla (clone henüz DOM'da değil, insertAdjacentElement kullanma)
+  const wrapper = document.createElement('div');
+  wrapper.style.marginBottom = '20px';
+  wrapper.setAttribute('data-wrapper', iid);
+
+  const tag = document.createElement('div');
+  tag.className = 'satis-turu-tag';
+  tag.style.cssText = 'background:#EBEBEB;padding:4px 16px 4px 21px;font-size:10px;font-weight:700;color:#404040;letter-spacing:1.5px;text-transform:uppercase;border-radius:6px 6px 0 0;margin-bottom:-6px';
+  tag.textContent = 'SATIŞ TÜRÜ';
+
+  wrapper.appendChild(tag);
+  wrapper.appendChild(clone);
+
+  // Modül adını güncelle
+  const h2 = clone.querySelector('h2');
+  if (h2) h2.textContent = label;
+
+  // Kaldır butonu
+  const header = clone.querySelector('.module-header');
+  if (header) {
+    let removeBtn = header.querySelector('.remove-btn');
+    if (!removeBtn) { removeBtn = document.createElement('button'); removeBtn.className = 'remove-btn'; header.appendChild(removeBtn); }
+    removeBtn.textContent = '✕ Kaldır';
+    removeBtn.onclick = () => removeModuleInstance(iid);
+  }
+
+  // Input id'lerini unique yap
+  clone.querySelectorAll('[id]').forEach(el => { el.id = iid + '_' + el.id; });
+
+  getModuleContainer().appendChild(wrapper);
+  moduleInstances.set(iid, { templateId, name: label, el: clone, wrapper });
+
+  clone.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  renderSidebarModules();
+}
+
+function removeModuleInstance(iid) {
+  const inst = moduleInstances.get(iid);
+  if (!inst) return;
+  inst.wrapper ? inst.wrapper.remove() : inst.el.remove();
+  moduleInstances.delete(iid);
+
+  // Kalan instance'ları yeniden numaralandır
+  const siblings = [];
+  moduleInstances.forEach((v, k) => { if (v.templateId === inst.templateId) siblings.push({ k, v }); });
+  if (siblings.length === 1) {
+    const meta = MODULE_LIST.find(m => m.id === inst.templateId);
+    const h2 = siblings[0].v.el.querySelector('h2');
+    if (h2 && meta) { h2.textContent = meta.name; siblings[0].v.name = meta.name; }
+  } else {
+    siblings.forEach(({ v }, i) => {
+      const meta = MODULE_LIST.find(m => m.id === v.templateId);
+      const h2 = v.el.querySelector('h2');
+      if (h2 && meta) { h2.textContent = `${meta.name} #${i + 1}`; v.name = `${meta.name} #${i + 1}`; }
+    });
+  }
+  renderSidebarModules();
+}
+
+function removeLastInstance(templateId) {
+  let lastKey = null;
+  moduleInstances.forEach((v, k) => { if (v.templateId === templateId) lastKey = k; });
+  if (lastKey) removeModuleInstance(lastKey);
+}
+
+function renderSidebarModules() {
+  const container = document.getElementById('sidebar-modules');
+  if (!container) return;
+  container.innerHTML = '';
+  MODULE_LIST.forEach(m => {
+    const count = countInstances(m.id);
+    const row = document.createElement('div');
+    row.className = 'mod-row';
+    row.innerHTML = `
+      <span class="mod-row-name">${m.name}</span>
+      <div class="mod-counter">
+        <button class="mod-btn mod-btn-minus" onclick="removeLastInstance('${m.id}')"
+          ${count === 0 ? 'disabled style="opacity:.3;cursor:not-allowed"' : ''}>−</button>
+        <span class="mod-count">${count}</span>
+        <button class="mod-btn mod-btn-plus" onclick="addModuleInstance('${m.id}')">+</button>
+      </div>`;
+    container.appendChild(row);
+  });
+}
+
+function getActiveInstanceEls() {
+  const els = [];
+  moduleInstances.forEach(inst => els.push(inst.wrapper || inst.el));
+  return els;
+}
+
+document.addEventListener('DOMContentLoaded', () => renderSidebarModules());
+
+// ── CLEAR ──
+function clearForm() {
+  if (!confirm('Formdaki tüm veriler silinecek. Emin misiniz?')) return;
+  const container = document.getElementById('module-container');
+  if (container) container.innerHTML = '';
+  moduleInstances.clear();
+  renderSidebarModules();
+  document.querySelectorAll('input[type=text], input[type=email], input[type=date], textarea')
+    .forEach(el => el.value = '');
+  document.querySelectorAll('input[type=checkbox], input[type=radio]')
+    .forEach(el => el.checked = false);
+}
+
+// ── HELPERS ──
+function v(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+function getChecked(name) {
+  const checked = [];
+  document.querySelectorAll(`input[name="${name}"]:checked`).forEach(el => {
+    checked.push(el.parentElement.textContent.trim());
+  });
+  return checked.join(', ');
+}
+function getCbs(ids) {
+  return ids.filter(id => {
+    const el = document.getElementById(id);
+    return el && el.checked;
+  }).map(id => document.getElementById(id).parentElement.textContent.trim()).join(', ');
+}
+
+// ── PDF GENERATİON ──
+async function generatePDF() {
+  const overlay = document.getElementById('pdfOverlay');
+  overlay.classList.add('show');
+  overlay.querySelector('.pdf-text').textContent = 'Hazırlanıyor...';
+  await new Promise(r => setTimeout(r, 80));
+
+  try {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+    const PW = 210, PH = 297, M = 8, UW = PW - M * 2;
+    let firstPage = true;
+
+    // Hangi modüller aktif
+    const moduleIds = ['kazan','malzeme','sera-tesisat','servis','yedek','servis-yedek','proje','kesif'];
+    // activeIds artık kullanılmıyor — getActiveInstanceEls() direkt instance wrapper'larını döndürür
+
+    // PDF header
+    const pdfHeader = document.getElementById('pdf-header');
+    pdfHeader.style.display = 'block';
+
+    // 3 grup: [header+bilgiler], [satış modülleri], [ödeme+diğer]
+    // Her grup elementlerden oluşur — id yerine element listesi kullanıyoruz
+    const grup1Els = [pdfHeader,
+      document.getElementById('genel'),
+      document.getElementById('firma'),
+      document.getElementById('soru')
+    ].filter(Boolean);
+
+    const instEls = getActiveInstanceEls();
+    const grup2Els = instEls.length > 0
+      ? [...instEls]
+      : [];
+
+    const grup3Ids = ['odeme','teslimat','isi','ekstra','onay'];
+    const grup3Els = grup3Ids.map(id => document.getElementById(id)).filter(Boolean);
+
+    const elGroups = [grup1Els, grup2Els, grup3Els].filter(g => g.length > 0);
+
+    // Input değerlerini topla (html2canvas input görmez)
+    function getVal(el) {
+      if (el.tagName === 'INPUT') return el.value || '';
+      if (el.tagName === 'TEXTAREA') return el.value || '';
+      return '';
+    }
+
+    // Grubu render et (element listesi alır)
+    async function renderGroup(origEls) {
+      // Geçici container — ekrana görünmez köşeye
+      const wrap = document.createElement('div');
+      wrap.style.cssText = [
+        'position:fixed', 'left:-9999px', 'top:0',
+        'width:780px', 'background:#F0EFED',
+        'padding:14px 18px', 'box-sizing:border-box',
+        'font-family:Segoe UI,sans-serif', 'z-index:-1'
+      ].join(';');
+
+      origEls.forEach(orig => {
+        if (!orig) return;
+        const clone = orig.cloneNode(true);
+        clone.style.display = '';
+        clone.style.marginBottom = '14px';
+        clone.removeAttribute('id'); // ID çakışmasını önle
+
+        // Input değerlerini clone'a aktar
+        const origInputs = orig.querySelectorAll('input, textarea');
+        const cloneInputs = clone.querySelectorAll('input, textarea');
+        origInputs.forEach((inp, i) => {
+          if (!cloneInputs[i]) return;
+          if (inp.type === 'checkbox' || inp.type === 'radio') {
+            cloneInputs[i].checked = inp.checked;
+          } else {
+            cloneInputs[i].value = inp.value;
+          }
+        });
+
+        // Input/textarea → görünür span/div (html2canvas bunları göremez)
+        clone.querySelectorAll('input[type=text], input[type=email], input[type=date]').forEach(inp => {
+          const span = document.createElement('span');
+          span.style.cssText = 'display:inline-block;padding:7px 10px;font-size:13px;color:#1A1A1A;font-family:Segoe UI,sans-serif;min-width:40px';
+          span.textContent = inp.value || ' ';
+          inp.replaceWith(span);
+        });
+        clone.querySelectorAll('textarea').forEach(ta => {
+          const div = document.createElement('div');
+          div.style.cssText = 'padding:8px 10px;font-size:13px;color:#1A1A1A;font-family:Segoe UI,sans-serif;white-space:pre-wrap;min-height:50px';
+          div.textContent = ta.value || ' ';
+          ta.replaceWith(div);
+        });
+
+        // Checkbox/radio → sembol
+        clone.querySelectorAll('input[type=checkbox]').forEach(cb => {
+          const span = document.createElement('span');
+          span.style.cssText = 'font-size:15px;margin-right:3px;color:#1A1A1A';
+          span.textContent = cb.checked ? '☑' : '☐';
+          cb.replaceWith(span);
+        });
+        clone.querySelectorAll('input[type=radio]').forEach(rb => {
+          const span = document.createElement('span');
+          span.style.cssText = 'font-size:15px;margin-right:3px;color:#1A1A1A';
+          span.textContent = rb.checked ? '●' : '○';
+          rb.replaceWith(span);
+        });
+
+        // Kaldır butonlarını gizle
+        clone.querySelectorAll('.remove-btn').forEach(b => b.remove());
+
+        wrap.appendChild(clone);
+      });
+
+      document.body.appendChild(wrap);
+      await new Promise(r => setTimeout(r, 60));
+
+      const canvas = await html2canvas(wrap, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#F0EFED',
+        width: 780,
+        windowWidth: 820,
+      });
+
+      document.body.removeChild(wrap);
+      return canvas;
+    }
+
+    // PDF bitti — header'ı gizle
+    const cleanupPdf = () => { pdfHeader.style.display = 'none'; };
+
+    // Her grubu sayfaya ekle
+    for (let gi = 0; gi < elGroups.length; gi++) {
+      const group = elGroups[gi];
+      if (group.length === 0) continue;
+
+      overlay.querySelector('.pdf-text').textContent = `Sayfa ${gi+1}/${elGroups.length} render ediliyor...`;
+      await new Promise(r => setTimeout(r, 20));
+
+      const canvas = await renderGroup(group);
+      const imgW = canvas.width;
+      const imgH = canvas.height;
+      const ratio = UW / (imgW / 2); // scale=2
+      const pageImgH = ((PH - M * 2) / ratio) * 2; // px
+
+      let srcY = 0;
+      while (srcY < imgH) {
+        if (!firstPage) doc.addPage();
+        firstPage = false;
+
+        const sliceH = Math.min(pageImgH, imgH - srcY);
+        const sliceCanvas = document.createElement('canvas');
+        sliceCanvas.width = imgW;
+        sliceCanvas.height = sliceH;
+        sliceCanvas.getContext('2d').drawImage(canvas, 0, srcY, imgW, sliceH, 0, 0, imgW, sliceH);
+
+        const imgData = sliceCanvas.toDataURL('image/jpeg', 0.92);
+        const sliceHmm = (sliceH / 2) * ratio;
+        doc.addImage(imgData, 'JPEG', M, M, UW, sliceHmm);
+
+        // Footer
+        doc.setDrawColor(232,80,26); doc.setLineWidth(0.4);
+        doc.line(M, PH-6, PW-M, PH-6);
+        doc.setFontSize(7); doc.setTextColor(160,160,160);
+        doc.text('ENORPA ENERJİ  —  POD Formu', M, PH-3.5);
+        const fn = document.getElementById('firma_adi')?.value || '';
+        if (fn) doc.text(fn, PW/2, PH-3.5, {align:'center'});
+
+        srcY += sliceH;
+      }
+    }
+
+    // Sayfa numaraları
+    const total = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= total; i++) {
+      doc.setPage(i);
+      doc.setFontSize(7); doc.setTextColor(160,160,160);
+      doc.text(`${i} / ${total}`, PW-M, PH-3.5, {align:'right'});
+    }
+
+    cleanupPdf();
+    const tarih = new Date().toISOString().slice(0,10);
+    const fa = document.getElementById('firma_adi')?.value?.replace(/[^a-zA-Z0-9À-ɏ]/g,'_') || 'POD';
+    doc.save(`ENORPA_POD_${fa}_${tarih}.pdf`);
+
+  } catch(e) {
+    console.error(e);
+    document.getElementById('pdf-header').style.display = 'none';
+    alert('PDF hatası: ' + e.message);
+  }
+
+  overlay.classList.remove('show');
+}
+</script></html>
