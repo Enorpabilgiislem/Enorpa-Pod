@@ -437,7 +437,6 @@
     <span class="sub" style="margin-left:10px">POD FORMU</span>
   </div>
   <div class="topbar-actions">
-    <button class="btn btn-ghost" onclick="openUrunModal()" style="border-color:#7A5C54;color:#C8A090">📦 Ürün Yelpazesi</button>
     <button class="btn btn-ghost" onclick="clearForm()">Temizle</button>
     <div class="pdf-dropdown" id="pdfDropdown">
       <button class="btn btn-primary" onclick="togglePdfMenu()">⬇ PDF İndir ▾</button>
@@ -581,13 +580,30 @@
   <div class="section-body">
     <div class="form-row compact-row">
       <div class="field-label compact-label">Kazan Modeli:</div>
-      <div class="field-value compact-value"><select class="field-input compact-input kazan-model-select" id="k1_model" onchange="onKazanModelChange(this)">
-        <option value="">— Ürün Seçin —</option>
+      <div class="field-value compact-value"><select class="field-input compact-input" id="k1_model">
+        <option value="">— Model Seçin —</option>
+        <option value="Akuamarin">Akuamarin</option>
+        <option value="Turkuaz">Turkuaz</option>
+        <option value="Kalsedon">Kalsedon</option>
+        <option value="Ametist">Ametist</option>
+        <option value="Oniks">Oniks</option>
+        <option value="Obsidyen">Obsidyen</option>
+        <option value="Has Turbo">Has Turbo</option>
+        <option value="Has">Has</option>
+        <option value="Has NG">Has NG</option>
+        <option value="Kuvars">Kuvars</option>
+        <option value="Kuvars NG">Kuvars NG</option>
+        <option value="Turmalin">Turmalin</option>
+        <option value="Ametrin">Ametrin</option>
+        <option value="Jasper">Jasper</option>
+        <option value="Safir">Safir</option>
+        <option value="Eşanjör">Eşanjör</option>
+        <option value="Diğer">Diğer</option>
       </select></div>
       <div class="field-label compact-label">Kapasite (kcal/h):</div>
-      <div class="field-value compact-value"><input class="field-input compact-input" type="text" id="k1_kapasite" readonly style="background:#F4F4F4;color:#404040;cursor:default" placeholder="Ürün seçince dolar"></div>
+      <div class="field-value compact-value"><input class="field-input compact-input" type="text" id="k1_kapasite"></div>
       <div class="field-label compact-label">Yakıt Türü:</div>
-      <div class="field-value compact-value"><input class="field-input compact-input" type="text" id="k1_yakit" readonly style="background:#F4F4F4;color:#404040;cursor:default" placeholder="Ürün seçince dolar"></div>
+      <div class="field-value compact-value"><input class="field-input compact-input" type="text" id="k1_yakit"></div>
       <div class="field-label compact-label">Adet:</div>
       <div class="field-value compact-value-sm"><input class="field-input compact-input" type="text" id="k1_adet" oninput="calcTotal(this)"></div>
     </div>
@@ -960,79 +976,6 @@
   <div class="pdf-text">PDF oluşturuluyor...</div>
 </div>
 
-<!-- ÜRÜN YELPAZESİ MODAL -->
-<div id="urunModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;overflow-y:auto">
-  <div style="background:#F0EFED;max-width:1000px;margin:40px auto;border-radius:8px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4)">
-    <!-- Modal Header -->
-    <div style="background:#2B2B2B;display:flex;align-items:center;padding:0 20px;height:56px">
-      <div style="width:4px;height:36px;background:#E8501A;border-radius:2px;margin-right:14px"></div>
-      <span style="font-size:15px;font-weight:700;color:#fff;letter-spacing:.5px">ÜRÜN YELPAZESİ</span>
-      <span style="margin-left:10px;font-size:12px;color:#888">Kazan kataloğunu yönetin</span>
-      <button onclick="closeUrunModal()" style="margin-left:auto;background:transparent;border:none;color:#aaa;font-size:22px;cursor:pointer;line-height:1">×</button>
-    </div>
-
-    <!-- Araç çubuğu -->
-    <div style="background:#fff;padding:12px 20px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #E8E8E8;flex-wrap:wrap">
-      <button onclick="showUrunForm()" class="btn btn-primary" style="font-size:12px;padding:7px 16px">+ Ürün Ekle</button>
-      <label class="btn btn-ghost" style="font-size:12px;padding:7px 16px;cursor:pointer">
-        📤 CSV Yükle
-        <input type="file" accept=".csv,.txt" onchange="csvYukle(event)" style="display:none">
-      </label>
-      <button onclick="csvIndir()" class="btn btn-ghost" style="font-size:12px;padding:7px 16px">⬇ CSV İndir</button>
-      <button onclick="ornekCsvIndir()" class="btn btn-ghost" style="font-size:12px;padding:7px 16px">📄 Örnek CSV</button>
-      <input type="text" id="urunAra" oninput="renderUrunTable()" placeholder="Ürün ara..." style="margin-left:auto;padding:7px 12px;border:1px solid #D0D0D0;border-radius:4px;font-size:12px;font-family:inherit;width:200px">
-    </div>
-
-    <!-- Ürün form (gizli/görünür) -->
-    <div id="urunForm" style="display:none;background:#FFF8F5;padding:16px 20px;border-bottom:1px solid #F0C0A8">
-      <div style="display:grid;grid-template-columns:1fr 1fr 2fr 1fr 1fr 1fr;gap:10px;align-items:end">
-        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">ÜST BAŞLIK *</label>
-          <input id="f_ust" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="Kazan"></div>
-        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">ALT BAŞLIK *</label>
-          <input id="f_alt" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="Sıcak Su Kazanı"></div>
-        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">DETAY (Ürün Adı) *</label>
-          <input id="f_detay" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="Akuamarin 510 kW 3 Bar"></div>
-        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">KOD</label>
-          <input id="f_kod" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="AK510-3"></div>
-        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">YAKIT TİPİ</label>
-          <input id="f_yakit" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="Sıvı/Gaz Yakıtlı"></div>
-        <div style="display:flex;gap:8px">
-          <button onclick="saveUrun()" class="btn btn-primary" style="font-size:12px;padding:7px 14px;flex:1">Kaydet</button>
-          <button onclick="cancelUrunForm()" class="btn btn-ghost" style="font-size:12px;padding:7px 14px">İptal</button>
-        </div>
-      </div>
-      <input type="hidden" id="f_editId">
-    </div>
-
-    <!-- Tablo -->
-    <div style="overflow-x:auto;max-height:480px;overflow-y:auto">
-      <table style="width:100%;border-collapse:collapse;font-size:13px" id="urunTableEl">
-        <thead style="position:sticky;top:0;background:#404040;color:#fff">
-          <tr>
-            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">#</th>
-            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">ÜST BAŞLIK</th>
-            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">ALT BAŞLIK</th>
-            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">DETAY (Ürün Adı)</th>
-            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">KOD</th>
-            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">YAKIT TİPİ</th>
-            <th style="padding:10px 12px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.5px">İŞLEM</th>
-          </tr>
-        </thead>
-        <tbody id="urunTableBody"></tbody>
-      </table>
-    </div>
-    <div style="padding:10px 20px;background:#fff;border-top:1px solid #E8E8E8;font-size:12px;color:#888;display:flex;justify-content:space-between;align-items:center">
-      <span id="urunCount">0 ürün</span>
-      <button onclick="tumunuSil()" style="background:transparent;border:none;color:#E8501A;font-size:12px;cursor:pointer;font-family:inherit">🗑 Tümünü Sil</button>
-    </div>
-    <div id="githubInfo" style="padding:8px 20px;background:#F0F8FF;border-top:1px solid #D0E8F0;font-size:11px;color:#555;display:none">
-      <strong>GitHub kaynağı:</strong> <span id="githubUrl"></span> — 
-      <em>Değişikliklerinizi kalıcı hale getirmek için CSV indirip urunler.json dosyasını güncelleyin.</em>
-    </div>
-  </div>
-</div>
-
-
 <script>
 // ── SIDEBAR ACTIVE ──
 const sections = document.querySelectorAll('.form-section, .soru-section');
@@ -1339,10 +1282,9 @@ function getActiveInstanceEls() {
   return els;
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  try { await loadUrunler(); } catch(e) { console.warn('loadUrunler hatası:', e); }
+document.addEventListener('DOMContentLoaded', () => {
   renderSidebarModules();
-  try { loadForm(); } catch(e) { console.warn('loadForm hatası:', e); }
+  loadForm();
   updateOzet();
 });
 
@@ -1505,11 +1447,8 @@ function loadForm() {
       if (el) el.checked = true;
     });
 
-    // Modülleri yeniden ekle (scroll ve sidebar refresh olmadan)
-    const _origScroll = Element.prototype.scrollIntoView;
-    Element.prototype.scrollIntoView = function() {}; // geçici devre dışı
+    // Modülleri yeniden ekle
     (data.activeModuleIds || []).forEach(tid => addModuleInstance(tid));
-    Element.prototype.scrollIntoView = _origScroll; // geri aç
 
     if (data.savedAt) {
       const d = new Date(data.savedAt);
@@ -1807,303 +1746,5 @@ async function generatePDF(showPrices = true) {
 
   overlay.classList.remove('show');
 }
-
-// ── ÜRÜN YELPAZESİ ──────────────────────────────────────────────────────────
-const URUN_KEY = 'enorpa_urun_yelpazesi';
-
-// Varsayılan ürünler (verilen liste)
-const DEFAULT_URUNLER = [
-  {id:1,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 510 kW 3 Bar',kod:'AK510-3',yakit:'Sıvı/Gaz Yakıtlı'},
-  {id:2,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 660 kW 3 Bar',kod:'AK660-3',yakit:'Sıvı/Gaz Yakıtlı'},
-  {id:3,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 810 kW 3 Bar',kod:'AK810-3',yakit:'Sıvı/Gaz Yakıtlı'},
-  {id:4,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 960 kW 3 Bar',kod:'AK960-3',yakit:'Sıvı/Gaz Yakıtlı'},
-  {id:5,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 1200 kW 3 Bar',kod:'AK1200-3',yakit:'Sıvı/Gaz Yakıtlı'},
-  {id:6,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 1500 kW 3 Bar',kod:'AK1500-3',yakit:'Sıvı/Gaz Yakıtlı'},
-  {id:7,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 1800 kW 3 Bar',kod:'AK1800-3',yakit:'Sıvı/Gaz Yakıtlı'},
-  {id:8,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 2400 kW 3 Bar',kod:'AK2400-3',yakit:'Sıvı/Gaz Yakıtlı'},
-];
-
-let urunler = [];
-let urunIdCounter = 100;
-
-// GitHub raw URL — repository adresinize göre otomatik belirlenir
-const GITHUB_JSON_URL = (() => {
-  const host = window.location.hostname;
-  const path = window.location.pathname.replace('/index.html','').replace(/\/$/, '');
-  if (host.includes('github.io')) {
-    // enorpabilgiislem.github.io/Enorpa-Pod → raw.githubusercontent.com/enorpabilgiislem/Enorpa-Pod/main/urunler.json
-    const user = host.replace('.github.io', '');
-    const repo = path.replace('/', '') || 'Enorpa-Pod';
-    return `https://raw.githubusercontent.com/${user}/${repo}/main/urunler.json`;
-  }
-  return null; // localhost veya farklı host — sadece localStorage/default kullan
-})();
-
-async function loadUrunler() {
-  // 1. Önce GitHub'dan çekmeyi dene
-  if (GITHUB_JSON_URL) {
-    try {
-      const res = await fetch(GITHUB_JSON_URL + '?t=' + Date.now()); // cache bypass
-      if (res.ok) {
-        const data = await res.json();
-        urunler = data.urunler || DEFAULT_URUNLER;
-        urunIdCounter = Math.max(...urunler.map(u => u.id), 100) + 1;
-        // GitHub'dan geleni localStorage'a da yaz (offline fallback)
-        try { localStorage.setItem(URUN_KEY, JSON.stringify({ urunler, counter: urunIdCounter, source: 'github' })); } catch(e){}
-        refreshKazanSelects();
-        return;
-      }
-    } catch(e) {
-      console.warn('GitHub JSON yüklenemedi, localStorage/varsayılana düşülüyor:', e.message);
-    }
-  }
-
-  // 2. GitHub başarısızsa localStorage'a bak
-  try {
-    const raw = localStorage.getItem(URUN_KEY);
-    if (raw) {
-      const parsed = JSON.parse(raw);
-      // Eğer localStorage'daki veri manuel düzenleme ise onu kullan
-      // GitHub'dan geldiyse ve GitHub ulaşılamıyorsa yine kullan
-      urunler = parsed.urunler || DEFAULT_URUNLER;
-      urunIdCounter = parsed.counter || (Math.max(...urunler.map(u => u.id), 100) + 1);
-      refreshKazanSelects();
-      return;
-    }
-  } catch(e) {}
-
-  // 3. Hiçbiri yoksa varsayılan liste
-  urunler = [...DEFAULT_URUNLER];
-  urunIdCounter = 20;
-  refreshKazanSelects();
-}
-
-function saveUrunler() {
-  // localStorage'a kaydet (geçici, bu sekme için)
-  try {
-    localStorage.setItem(URUN_KEY, JSON.stringify({ urunler, counter: urunIdCounter, source: 'local' }));
-  } catch(e) {}
-  refreshKazanSelects();
-
-  // GitHub'da çalışıyorsa kalıcı güncelleme için JSON indirmeyi öner
-  if (GITHUB_JSON_URL) {
-    showToast('💡 Kalıcı kayıt için CSV/JSON indirip GitHub'a yükleyin', 'info', 5000);
-  }
-}
-
-function refreshKazanSelects() {
-  // Kazan modülündeki tüm select'leri güncelle
-  document.querySelectorAll('.kazan-model-select').forEach(sel => {
-    const current = sel.value;
-    sel.innerHTML = '<option value="">— Ürün Seçin —</option>';
-    // Ürünleri alt başlığa göre grupla
-    const groups = {};
-    urunler.forEach(u => {
-      const grp = u.alt || u.ust || 'Diğer';
-      if (!groups[grp]) groups[grp] = [];
-      groups[grp].push(u);
-    });
-    Object.entries(groups).forEach(([grpName, items]) => {
-      const og = document.createElement('optgroup');
-      og.label = grpName;
-      items.forEach(u => {
-        const opt = document.createElement('option');
-        opt.value = u.id;
-        opt.textContent = u.detay + (u.kod ? ` (${u.kod})` : '');
-        opt.dataset.detay = u.detay;
-        opt.dataset.kod = u.kod || '';
-        opt.dataset.yakit = u.yakit || '';
-        opt.dataset.alt = u.alt || '';
-        og.appendChild(opt);
-      });
-      sel.appendChild(og);
-    });
-    if (current) sel.value = current;
-  });
-}
-
-function onKazanModelChange(sel) {
-  // En yakın section-body içindeki kapasite ve yakıt alanlarını doldur
-  const body = sel.closest('.section-body') || sel.closest('.form-section');
-  const opt = sel.options[sel.selectedIndex];
-  const kapasiteEl = body?.querySelector('[id$="k1_kapasite"]');
-  const yakitEl = body?.querySelector('[id$="k1_yakit"]');
-
-  if (opt && opt.value) {
-    if (kapasiteEl) kapasiteEl.value = opt.dataset.detay || '';
-    if (yakitEl) yakitEl.value = opt.dataset.yakit || '';
-  } else {
-    if (kapasiteEl) kapasiteEl.value = '';
-    if (yakitEl) yakitEl.value = '';
-  }
-  autoSave();
-}
-
-// ── Modal Aç/Kapat ──
-function openUrunModal() {
-  renderUrunTable();
-  document.getElementById('urunModal').style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  // GitHub URL bilgisi
-  const infoDiv = document.getElementById('githubInfo');
-  const urlSpan = document.getElementById('githubUrl');
-  if (GITHUB_JSON_URL && infoDiv && urlSpan) {
-    urlSpan.textContent = GITHUB_JSON_URL;
-    infoDiv.style.display = 'block';
-  }
-}
-function closeUrunModal() {
-  document.getElementById('urunModal').style.display = 'none';
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeUrunModal(); });
-
-// ── Tablo Render ──
-function renderUrunTable() {
-  const ara = document.getElementById('urunAra')?.value?.toLowerCase() || '';
-  const filtered = urunler.filter(u =>
-    !ara || [u.ust,u.alt,u.detay,u.kod,u.yakit].join(' ').toLowerCase().includes(ara)
-  );
-  const tbody = document.getElementById('urunTableBody');
-  if (!tbody) return;
-
-  tbody.innerHTML = filtered.map((u, i) => `
-    <tr style="background:${i%2===0?'#fff':'#F4F4F4'};border-bottom:1px solid #E8E8E8">
-      <td style="padding:8px 12px;color:#888;font-size:12px">${i+1}</td>
-      <td style="padding:8px 12px"><span style="background:#E8E8E8;border-radius:3px;padding:2px 7px;font-size:11px;font-weight:700;color:#404040">${esc(u.ust)}</span></td>
-      <td style="padding:8px 12px;color:#6B6B6B;font-size:12px">${esc(u.alt)}</td>
-      <td style="padding:8px 12px;font-weight:600;color:#1A1A1A">${esc(u.detay)}</td>
-      <td style="padding:8px 12px"><code style="background:#F0EFED;padding:2px 6px;border-radius:3px;font-size:12px;color:#E8501A">${esc(u.kod)}</code></td>
-      <td style="padding:8px 12px;color:#6B6B6B;font-size:12px">${esc(u.yakit)}</td>
-      <td style="padding:8px 12px;text-align:center;white-space:nowrap">
-        <button onclick="editUrun(${u.id})" style="background:transparent;border:1px solid #D0D0D0;color:#404040;padding:3px 10px;border-radius:3px;font-size:11px;cursor:pointer;margin-right:4px;font-family:inherit">Düzenle</button>
-        <button onclick="deleteUrun(${u.id})" style="background:transparent;border:1px solid #E8501A;color:#E8501A;padding:3px 10px;border-radius:3px;font-size:11px;cursor:pointer;font-family:inherit">Sil</button>
-      </td>
-    </tr>`).join('');
-
-  const countEl = document.getElementById('urunCount');
-  if (countEl) countEl.textContent = `${urunler.length} ürün${ara ? ` (${filtered.length} sonuç)` : ''}`;
-}
-
-function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-// ── CRUD ──
-function showUrunForm(data=null) {
-  const form = document.getElementById('urunForm');
-  form.style.display = 'block';
-  document.getElementById('f_ust').value   = data?.ust   || '';
-  document.getElementById('f_alt').value   = data?.alt   || '';
-  document.getElementById('f_detay').value = data?.detay || '';
-  document.getElementById('f_kod').value   = data?.kod   || '';
-  document.getElementById('f_yakit').value = data?.yakit || '';
-  document.getElementById('f_editId').value = data?.id   || '';
-  document.getElementById('f_ust').focus();
-}
-function cancelUrunForm() {
-  document.getElementById('urunForm').style.display = 'none';
-}
-function saveUrun() {
-  const detay = document.getElementById('f_detay').value.trim();
-  const ust   = document.getElementById('f_ust').value.trim();
-  const alt   = document.getElementById('f_alt').value.trim();
-  if (!detay || !ust) { showToast('Üst Başlık ve Detay zorunlu', 'warning'); return; }
-
-  const editId = parseInt(document.getElementById('f_editId').value) || 0;
-  const urun = {
-    id: editId || urunIdCounter++,
-    ust, alt,
-    detay,
-    kod:   document.getElementById('f_kod').value.trim(),
-    yakit: document.getElementById('f_yakit').value.trim(),
-  };
-
-  if (editId) {
-    const idx = urunler.findIndex(u => u.id === editId);
-    if (idx >= 0) urunler[idx] = urun;
-  } else {
-    urunler.push(urun);
-  }
-  saveUrunler();
-  cancelUrunForm();
-  renderUrunTable();
-  showToast(editId ? 'Ürün güncellendi' : 'Ürün eklendi', 'success');
-}
-function editUrun(id) {
-  const u = urunler.find(x => x.id === id);
-  if (u) showUrunForm(u);
-}
-function deleteUrun(id) {
-  if (!confirm('Bu ürünü silmek istediğinize emin misiniz?')) return;
-  urunler = urunler.filter(u => u.id !== id);
-  saveUrunler();
-  renderUrunTable();
-  showToast('Ürün silindi', 'info');
-}
-function tumunuSil() {
-  if (!confirm('Tüm ürünleri silmek istediğinize emin misiniz? Bu işlem geri alınamaz!')) return;
-  urunler = [];
-  saveUrunler();
-  renderUrunTable();
-  showToast('Tüm ürünler silindi', 'info');
-}
-
-// ── CSV İşlemleri ──
-function csvIndir() {
-  const header = 'Ust Baslik,Alt Baslik,Detay,Kod,Yakit Tipi';
-  const rows = urunler.map(u => `"${u.ust}","${u.alt}","${u.detay}","${u.kod}","${u.yakit}"`);
-  const csv = [header, ...rows].join('
-');
-  const blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'ENORPA_Urun_Yelpazesi.csv';
-  a.click();
-}
-function ornekCsvIndir() {
-  const csv = 'Ust Baslik,Alt Baslik,Detay,Kod,Yakit Tipi
-"Kazan","Sıcak Su Kazanı","Akuamarin 510 kW 3 Bar","AK510-3","Sıvı/Gaz Yakıtlı"
-"Kazan","Buhar Kazanı","Kuvars 1000 kW","KV1000","Gaz Yakıtlı"';
-  const blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'ENORPA_Urun_Ornek.csv';
-  a.click();
-}
-function csvYukle(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    try {
-      const lines = e.target.result.replace(/
-/g,'').split('
-').filter(l=>l.trim());
-      const header = lines[0].toLowerCase();
-      let added = 0;
-      for (let i = 1; i < lines.length; i++) {
-        const cols = lines[i].match(/("([^"]*)"|([^,]*))(?:,|$)/g)
-          ?.map(c => c.replace(/^"|"$|,$/g,'').trim()) || [];
-        if (cols.length < 3) continue;
-        urunler.push({
-          id: urunIdCounter++,
-          ust:   cols[0] || '',
-          alt:   cols[1] || '',
-          detay: cols[2] || '',
-          kod:   cols[3] || '',
-          yakit: cols[4] || '',
-        });
-        added++;
-      }
-      saveUrunler();
-      renderUrunTable();
-      showToast(`${added} ürün yüklendi`, 'success');
-    } catch(err) {
-      showToast('CSV okuma hatası: ' + err.message, 'warning');
-    }
-    event.target.value = '';
-  };
-  reader.readAsText(file, 'UTF-8');
-}
-
 </script>
 </html>
