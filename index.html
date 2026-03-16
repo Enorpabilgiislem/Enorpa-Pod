@@ -1340,9 +1340,9 @@ function getActiveInstanceEls() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await loadUrunler();
+  try { await loadUrunler(); } catch(e) { console.warn('loadUrunler hatası:', e); }
   renderSidebarModules();
-  loadForm();
+  try { loadForm(); } catch(e) { console.warn('loadForm hatası:', e); }
   updateOzet();
 });
 
@@ -1505,8 +1505,11 @@ function loadForm() {
       if (el) el.checked = true;
     });
 
-    // Modülleri yeniden ekle
+    // Modülleri yeniden ekle (scroll ve sidebar refresh olmadan)
+    const _origScroll = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function() {}; // geçici devre dışı
     (data.activeModuleIds || []).forEach(tid => addModuleInstance(tid));
+    Element.prototype.scrollIntoView = _origScroll; // geri aç
 
     if (data.savedAt) {
       const d = new Date(data.savedAt);
