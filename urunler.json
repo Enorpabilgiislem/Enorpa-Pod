@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "version": "1.0",
+    "guncelleme": "2026-03-16",
+    "aciklama": "ENORPA Ürün Yelpazesi - bu dosyayı düzenleyip GitHub'a yükleyerek listeyi güncelleyin"
+  },
+  "urunler": [
+    {"id":1,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 510 kW 3 Bar","kod":"AK510-3","yakit":"Sıvı/Gaz Yakıtlı"},
+    {"id":2,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 660 kW 3 Bar","kod":"AK660-3","yakit":"Sıvı/Gaz Yakıtlı"},
+    {"id":3,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 810 kW 3 Bar","kod":"AK810-3","yakit":"Sıvı/Gaz Yakıtlı"},
+    {"id":4,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 960 kW 3 Bar","kod":"AK960-3","yakit":"Sıvı/Gaz Yakıtlı"},
+    {"id":5,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 1200 kW 3 Bar","kod":"AK1200-3","yakit":"Sıvı/Gaz Yakıtlı"},
+    {"id":6,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 1500 kW 3 Bar","kod":"AK1500-3","yakit":"Sıvı/Gaz Yakıtlı"},
+    {"id":7,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 1800 kW 3 Bar","kod":"AK1800-3","yakit":"Sıvı/Gaz Yakıtlı"},
+    {"id":8,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 2400 kW 3 Bar","kod":"AK2400-3","yakit":"Sıvı/Gaz Yakıtlı"}
+  ]
+}
