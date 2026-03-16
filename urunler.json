@@ -1,17 +1,2714 @@
-{
-  "meta": {
-    "version": "1.0",
-    "guncelleme": "2026-03-16",
-    "aciklama": "ENORPA Ürün Yelpazesi - bu dosyayı düzenleyip GitHub'a yükleyerek listeyi güncelleyin"
+[
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 510 kW 3 Bar",
+    "KOD": "AK510-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
   },
-  "urunler": [
-    {"id":1,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 510 kW 3 Bar","kod":"AK510-3","yakit":"Sıvı/Gaz Yakıtlı"},
-    {"id":2,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 660 kW 3 Bar","kod":"AK660-3","yakit":"Sıvı/Gaz Yakıtlı"},
-    {"id":3,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 810 kW 3 Bar","kod":"AK810-3","yakit":"Sıvı/Gaz Yakıtlı"},
-    {"id":4,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 960 kW 3 Bar","kod":"AK960-3","yakit":"Sıvı/Gaz Yakıtlı"},
-    {"id":5,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 1200 kW 3 Bar","kod":"AK1200-3","yakit":"Sıvı/Gaz Yakıtlı"},
-    {"id":6,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 1500 kW 3 Bar","kod":"AK1500-3","yakit":"Sıvı/Gaz Yakıtlı"},
-    {"id":7,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 1800 kW 3 Bar","kod":"AK1800-3","yakit":"Sıvı/Gaz Yakıtlı"},
-    {"id":8,"ust":"Kazan","alt":"Sıcak Su Kazanı","detay":"Akuamarin 2400 kW 3 Bar","kod":"AK2400-3","yakit":"Sıvı/Gaz Yakıtlı"}
-  ]
-}
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 660 kW 3 Bar",
+    "KOD": "AK660-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 810 kW 3 Bar",
+    "KOD": "AK810-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 960 kW 3 Bar",
+    "KOD": "AK960-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 1200 kW 3 Bar",
+    "KOD": "AK1200-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 1500 kW 3 Bar",
+    "KOD": "AK1500-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 1800 kW 3 Bar",
+    "KOD": "AK1800-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 2400 kW 3 Bar",
+    "KOD": "AK2400-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 3000 kW 3 Bar",
+    "KOD": "AK3000-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 3600 kW 3 Bar",
+    "KOD": "AK3600-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 4200 kW 3 Bar",
+    "KOD": "AK4200-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 4800 kW 3 Bar",
+    "KOD": "AK4800-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 5400 kW 3 Bar",
+    "KOD": "AK5400-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 6000 kW 3 Bar",
+    "KOD": "AK6000-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 6600 kW 3 Bar",
+    "KOD": "AK6600-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 7200 kW 3 Bar",
+    "KOD": "AK7200-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 8400 kW 3 Bar",
+    "KOD": "AK8400-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 9600 kW 3 Bar",
+    "KOD": "AK9600-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 10800 kW 3 Bar",
+    "KOD": "AK10800-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 12000 kW 3 Bar",
+    "KOD": "AK12000-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 510 kW 6 Bar",
+    "KOD": "AK510-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 660 kW 6 Bar",
+    "KOD": "AK660-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 810 kW 6 Bar",
+    "KOD": "AK810-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 960 kW 6 Bar",
+    "KOD": "AK960-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 1200 kW 6 Bar",
+    "KOD": "AK1200-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 1500 kW 6 Bar",
+    "KOD": "AK1500-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 1800 kW 6 Bar",
+    "KOD": "AK1800-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 2400 kW 6 Bar",
+    "KOD": "AK2400-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 3000 kW 6 Bar",
+    "KOD": "AK3000-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 3600 kW 6 Bar",
+    "KOD": "AK3600-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 4200 kW 6 Bar",
+    "KOD": "AK4200-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 4800 kW 6 Bar",
+    "KOD": "AK4800-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 5400 kW 6 Bar",
+    "KOD": "AK5400-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 6000 kW 6 Bar",
+    "KOD": "AK6000-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 6600 kW 6 Bar",
+    "KOD": "AK6600-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 7200 kW 6 Bar",
+    "KOD": "AK7200-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 8400 kW 6 Bar",
+    "KOD": "AK8400-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 9600 kW 6 Bar",
+    "KOD": "AK9600-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 10800 kW 6 Bar",
+    "KOD": "AK10800-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Akuamarin",
+    "Detay": "Akuamarin 12000 kW 6 Bar",
+    "KOD": "AK12000-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Ametist",
+    "Detay": "Ametist 2000000 kcal/h 3 Bar",
+    "KOD": "ST20-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Ametist",
+    "Detay": "Ametist 2500000 kcal/h 3 Bar",
+    "KOD": "ST25-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Ametist",
+    "Detay": "Ametist 3000000 kcal/h 3 Bar",
+    "KOD": "ST30-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Ametist",
+    "Detay": "Ametist 3500000 kcal/h 3 Bar",
+    "KOD": "ST35-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Ametist",
+    "Detay": "Ametist 4000000 kcal/h 3 Bar",
+    "KOD": "ST40-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Ametist",
+    "Detay": "Ametist 5000000 kcal/h 3 Bar",
+    "KOD": "ST50-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 1500000 kcal/h 3 Bar",
+    "KOD": "KL15-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 1500000 kcal/h 6 Bar",
+    "KOD": "KL15-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 1500000 kcal/h 8 Bar",
+    "KOD": "KL15-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 1500000 kcal/h 10 Bar",
+    "KOD": "KL15-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 1750000 kcal/h 3 Bar",
+    "KOD": "KL17-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 1750000 kcal/h 6 Bar",
+    "KOD": "KL17-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 1750000 kcal/h 8 Bar",
+    "KOD": "KL17-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 1750000 kcal/h 10 Bar",
+    "KOD": "KL17-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 2000000 kcal/h 3 Bar",
+    "KOD": "KL20-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 2000000 kcal/h 6 Bar",
+    "KOD": "KL20-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 2000000 kcal/h 8 Bar",
+    "KOD": "KL20-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 2000000 kcal/h 10 Bar",
+    "KOD": "KL20-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 2500000 kcal/h 3 Bar",
+    "KOD": "KL25-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 2500000 kcal/h 6 Bar",
+    "KOD": "KL25-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 2500000 kcal/h 8 Bar",
+    "KOD": "KL25-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 2500000 kcal/h 10 Bar",
+    "KOD": "KL25-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 3000000 kcal/h 3 Bar",
+    "KOD": "KL30-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 3000000 kcal/h 6 Bar",
+    "KOD": "KL30-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 3000000 kcal/h 8 Bar",
+    "KOD": "KL30-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 3000000 kcal/h 10 Bar",
+    "KOD": "KL30-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 3500000 kcal/h 3 Bar",
+    "KOD": "KL35-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 3500000 kcal/h 6 Bar",
+    "KOD": "KL35-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 3500000 kcal/h 8 Bar",
+    "KOD": "KL35-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Kalsedon",
+    "Detay": "Kalsedon 3500000 kcal/h 10 Bar",
+    "KOD": "KL35-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 750000 kcal/h 3 Bar",
+    "KOD": "BS7-3",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 750000 kcal/h 6 Bar",
+    "KOD": "BS7-6",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 750000 kcal/h 8 Bar",
+    "KOD": "BS7-8",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 750000 kcal/h 10 Bar",
+    "KOD": "BS7-10",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 1000000 kcal/h 3 Bar",
+    "KOD": "BS10-3",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 1000000 kcal/h 6 Bar",
+    "KOD": "BS10-6",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 1000000 kcal/h 8 Bar",
+    "KOD": "BS10-8",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 1000000 kcal/h 10 Bar",
+    "KOD": "BS10-10",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 1500000 kcal/h 3 Bar",
+    "KOD": "BS15-3",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 1500000 kcal/h 6 Bar",
+    "KOD": "BS15-6",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 1500000 kcal/h 8 Bar",
+    "KOD": "BS15-8",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 1500000 kcal/h 10 Bar",
+    "KOD": "BS15-10",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 2000000 kcal/h 3 Bar",
+    "KOD": "BS20-3",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 2000000 kcal/h 6 Bar",
+    "KOD": "BS20-6",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 2000000 kcal/h 8 Bar",
+    "KOD": "BS20-8",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 2000000 kcal/h 10 Bar",
+    "KOD": "BS20-10",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 3000000 kcal/h 3 Bar",
+    "KOD": "BS30-3",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 3000000 kcal/h 6 Bar",
+    "KOD": "BS30-6",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 3000000 kcal/h 8 Bar",
+    "KOD": "BS30-8",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Obsidyen",
+    "Detay": "Obsidyen 3000000 kcal/h 10 Bar",
+    "KOD": "BS30-10",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 3000000 kcal/h 3 Bar",
+    "KOD": "NX30-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 3000000 kcal/h 6 Bar",
+    "KOD": "NX30-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 3000000 kcal/h 8 Bar",
+    "KOD": "NX30-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 3000000 kcal/h 10 Bar",
+    "KOD": "NX30-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 4000000 kcal/h 3 Bar",
+    "KOD": "NX40-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 4000000 kcal/h 6 Bar",
+    "KOD": "NX40-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 4000000 kcal/h 8 Bar",
+    "KOD": "NX40-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 4000000 kcal/h 10 Bar",
+    "KOD": "NX40-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 5000000 kcal/h 3 Bar",
+    "KOD": "NX50-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 5000000 kcal/h 6 Bar",
+    "KOD": "NX50-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 5000000 kcal/h 8 Bar",
+    "KOD": "NX50-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 5000000 kcal/h 10 Bar",
+    "KOD": "NX50-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 6000000 kcal/h 3 Bar",
+    "KOD": "NX60-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 6000000 kcal/h 6 Bar",
+    "KOD": "NX60-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 6000000 kcal/h 8 Bar",
+    "KOD": "NX60-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Oniks",
+    "Detay": "Oniks 6000000 kcal/h 10 Bar",
+    "KOD": "NX60-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 500000 kcal/h 3 Bar",
+    "KOD": "TR5-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 500000 kcal/h 6 Bar",
+    "KOD": "TR5-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 500000 kcal/h 8 Bar",
+    "KOD": "TR5-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 500000 kcal/h 10 Bar",
+    "KOD": "TR5-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 750000 kcal/h 3 Bar",
+    "KOD": "TR7-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 750000 kcal/h 6 Bar",
+    "KOD": "TR7-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 750000 kcal/h 8 Bar",
+    "KOD": "TR7-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 750000 kcal/h 10 Bar",
+    "KOD": "TR7-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1000000 kcal/h 3 Bar",
+    "KOD": "TR10-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1000000 kcal/h 6 Bar",
+    "KOD": "TR10-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1000000 kcal/h 8 Bar",
+    "KOD": "TR10-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1000000 kcal/h 10 Bar",
+    "KOD": "TR10-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1250000 kcal/h 3 Bar",
+    "KOD": "TR12-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1250000 kcal/h 6 Bar",
+    "KOD": "TR12-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1250000 kcal/h 8 Bar",
+    "KOD": "TR12-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1250000 kcal/h 10 Bar",
+    "KOD": "TR12-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1500000 kcal/h 3 Bar",
+    "KOD": "TR15-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1500000 kcal/h 6 Bar",
+    "KOD": "TR15-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1500000 kcal/h 8 Bar",
+    "KOD": "TR15-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1500000 kcal/h 10 Bar",
+    "KOD": "TR15-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1750000 kcal/h 3 Bar",
+    "KOD": "TR17-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1750000 kcal/h 6 Bar",
+    "KOD": "TR17-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1750000 kcal/h 8 Bar",
+    "KOD": "TR17-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Su Kazanı",
+    "Alt Başlık": "Turkuaz",
+    "Detay": "Turkuaz 1750000 kcal/h 10 Bar",
+    "KOD": "TR17-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has 2",
+    "Detay": "Has 2 75000 kcal/h",
+    "KOD": "HS2",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has 4",
+    "Detay": "Has 4 150000 kcal/h",
+    "KOD": "HS4",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has 5",
+    "Detay": "Has 5 200000 kcal/h",
+    "KOD": "HS5",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has NG",
+    "Detay": "Has NG 500000 kcal/h",
+    "KOD": "HN5",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has NG",
+    "Detay": "Has NG 600000 kcal/h",
+    "KOD": "HN6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has NG",
+    "Detay": "Has NG 700000 kcal/h",
+    "KOD": "HN7",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has NG",
+    "Detay": "Has NG 800000 kcal/h",
+    "KOD": "HN8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has NG",
+    "Detay": "Has NG 900000 kcal/h",
+    "KOD": "HN9",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has NG",
+    "Detay": "Has NG 1000000 kcal/h",
+    "KOD": "HN10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Sıcak Hava Kazanı",
+    "Alt Başlık": "Has Turbo",
+    "Detay": "Has Turbo 600000 kcal/h",
+    "KOD": "HT6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 3500 kg/h 3 Bar",
+    "KOD": "AN35-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 3500 kg/h 6 Bar",
+    "KOD": "AN35-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 3500 kg/h 8 Bar",
+    "KOD": "AN35-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 3500 kg/h 10 Bar",
+    "KOD": "AN35-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 4000 kg/h 3 Bar",
+    "KOD": "AN40-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 4000 kg/h 6 Bar",
+    "KOD": "AN40-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 4000 kg/h 8 Bar",
+    "KOD": "AN40-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 4000 kg/h 10 Bar",
+    "KOD": "AN40-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 4500 kg/h 3 Bar",
+    "KOD": "AN45-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 4500 kg/h 6 Bar",
+    "KOD": "AN45-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 4500 kg/h 8 Bar",
+    "KOD": "AN45-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 4500 kg/h 10 Bar",
+    "KOD": "AN45-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 5000 kg/h 3 Bar",
+    "KOD": "AN50-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 5000 kg/h 6 Bar",
+    "KOD": "AN50-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 5000 kg/h 8 Bar",
+    "KOD": "AN50-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Ametrin",
+    "Detay": "Ametrin 5000 kg/h 10 Bar",
+    "KOD": "AN50-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 1500 kg/h 3 Bar",
+    "KOD": "JS15-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 1500 kg/h 6 Bar",
+    "KOD": "JS15-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 1500 kg/h 8 Bar",
+    "KOD": "JS15-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 1500 kg/h 10 Bar",
+    "KOD": "JS15-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 2000 kg/h 3 Bar",
+    "KOD": "JS20-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 2000 kg/h 6 Bar",
+    "KOD": "JS20-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 2000 kg/h 8 Bar",
+    "KOD": "JS20-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 2000 kg/h 10 Bar",
+    "KOD": "JS20-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 2500 kg/h 3 Bar",
+    "KOD": "JS25-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 2500 kg/h 6 Bar",
+    "KOD": "JS25-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 2500 kg/h 8 Bar",
+    "KOD": "JS25-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Jenaratörü",
+    "Alt Başlık": "Jasper",
+    "Detay": "Jasper 2500 kg/h 10 Bar",
+    "KOD": "JS25-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 2000 kg/h 3 Bar",
+    "KOD": "KK20-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 2000 kg/h 6 Bar",
+    "KOD": "KK20-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 2000 kg/h 8 Bar",
+    "KOD": "KK20-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 2000 kg/h 10 Bar",
+    "KOD": "KK20-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 2500 kg/h 3 Bar",
+    "KOD": "KK25-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 2500 kg/h 6 Bar",
+    "KOD": "KK25-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 2500 kg/h 8 Bar",
+    "KOD": "KK25-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 2500 kg/h 10 Bar",
+    "KOD": "KK25-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 3000 kg/h 3 Bar",
+    "KOD": "KK30-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 3000 kg/h 6 Bar",
+    "KOD": "KK30-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 3000 kg/h 8 Bar",
+    "KOD": "KK30-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 3000 kg/h 10 Bar",
+    "KOD": "KK30-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 3500 kg/h 3 Bar",
+    "KOD": "KK35-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 3500 kg/h 6 Bar",
+    "KOD": "KK35-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 3500 kg/h 8 Bar",
+    "KOD": "KK35-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 3500 kg/h 10 Bar",
+    "KOD": "KK35-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 4000 kg/h 3 Bar",
+    "KOD": "KK40-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 4000 kg/h 6 Bar",
+    "KOD": "KK40-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 4000 kg/h 8 Bar",
+    "KOD": "KK40-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 4000 kg/h 10 Bar",
+    "KOD": "KK40-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 4500 kg/h 3 Bar",
+    "KOD": "KK45-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 4500 kg/h 6 Bar",
+    "KOD": "KK45-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 4500 kg/h 8 Bar",
+    "KOD": "KK45-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 4500 kg/h 10 Bar",
+    "KOD": "KK45-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 5000 kg/h 3 Bar",
+    "KOD": "KK50-3",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 5000 kg/h 6 Bar",
+    "KOD": "KK50-6",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 5000 kg/h 8 Bar",
+    "KOD": "KK50-8",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars",
+    "Detay": "Kuvars 5000 kg/h 10 Bar",
+    "KOD": "KK50-10",
+    "Yakıt Tipi": "Katı Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 2000 kg/h 3 Bar",
+    "KOD": "KS20-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 2000 kg/h 6 Bar",
+    "KOD": "KS20-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 2000 kg/h 8 Bar",
+    "KOD": "KS20-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 2000 kg/h 10 Bar",
+    "KOD": "KS20-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 2500 kg/h 3 Bar",
+    "KOD": "KS25-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 2500 kg/h 6 Bar",
+    "KOD": "KS25-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 2500 kg/h 8 Bar",
+    "KOD": "KS25-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 2500 kg/h 10 Bar",
+    "KOD": "KS25-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 3000 kg/h 3 Bar",
+    "KOD": "KS30-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 3000 kg/h 6 Bar",
+    "KOD": "KS30-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 3000 kg/h 8 Bar",
+    "KOD": "KS30-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 3000 kg/h 10 Bar",
+    "KOD": "KS30-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 3500 kg/h 3 Bar",
+    "KOD": "KS35-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 3500 kg/h 6 Bar",
+    "KOD": "KS35-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 3500 kg/h 8 Bar",
+    "KOD": "KS35-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 3500 kg/h 10 Bar",
+    "KOD": "KS35-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 4000 kg/h 3 Bar",
+    "KOD": "KS40-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 4000 kg/h 6 Bar",
+    "KOD": "KS40-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 4000 kg/h 8 Bar",
+    "KOD": "KS40-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 4000 kg/h 10 Bar",
+    "KOD": "KS40-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 4500 kg/h 3 Bar",
+    "KOD": "KS45-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 4500 kg/h 6 Bar",
+    "KOD": "KS45-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 4500 kg/h 8 Bar",
+    "KOD": "KS45-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 4500 kg/h 10 Bar",
+    "KOD": "KS45-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 5000 kg/h 3 Bar",
+    "KOD": "KS50-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 5000 kg/h 6 Bar",
+    "KOD": "KS50-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 5000 kg/h 8 Bar",
+    "KOD": "KS50-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 5000 kg/h 10 Bar",
+    "KOD": "KS50-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 5500 kg/h 3 Bar",
+    "KOD": "KS55-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 5500 kg/h 6 Bar",
+    "KOD": "KS55-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 5500 kg/h 8 Bar",
+    "KOD": "KS55-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 5500 kg/h 10 Bar",
+    "KOD": "KS55-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 6000 kg/h 3 Bar",
+    "KOD": "KS60-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 6000 kg/h 6 Bar",
+    "KOD": "KS60-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 6000 kg/h 8 Bar",
+    "KOD": "KS60-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 6000 kg/h 10 Bar",
+    "KOD": "KS60-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 6500 kg/h 3 Bar",
+    "KOD": "KS65-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 6500 kg/h 6 Bar",
+    "KOD": "KS65-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 6500 kg/h 8 Bar",
+    "KOD": "KS65-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 6500 kg/h 10 Bar",
+    "KOD": "KS65-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 7000 kg/h 3 Bar",
+    "KOD": "KS70-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 7000 kg/h 6 Bar",
+    "KOD": "KS70-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 7000 kg/h 8 Bar",
+    "KOD": "KS70-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 7000 kg/h 10 Bar",
+    "KOD": "KS70-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 7500 kg/h 3 Bar",
+    "KOD": "KS75-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 7500 kg/h 6 Bar",
+    "KOD": "KS75-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 7500 kg/h 8 Bar",
+    "KOD": "KS75-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 7500 kg/h 10 Bar",
+    "KOD": "KS75-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 8000 kg/h 3 Bar",
+    "KOD": "KS80-3",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 8000 kg/h 6 Bar",
+    "KOD": "KS80-6",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 8000 kg/h 8 Bar",
+    "KOD": "KS80-8",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Kuvars NG",
+    "Detay": "Kuvars NG 8000 kg/h 10 Bar",
+    "KOD": "KS80-10",
+    "Yakıt Tipi": "Sıvı/Gaz Yakıtlı"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 3000 kg/h 3 Bar",
+    "KOD": "TM30-3",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 3000 kg/h 6 Bar",
+    "KOD": "TM30-6",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 3000 kg/h 8 Bar",
+    "KOD": "TM30-8",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 3000 kg/h 10 Bar",
+    "KOD": "TM30-10",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 4000 kg/h 3 Bar",
+    "KOD": "TM40-3",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 4000 kg/h 6 Bar",
+    "KOD": "TM40-6",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 4000 kg/h 8 Bar",
+    "KOD": "TM40-8",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 4000 kg/h 10 Bar",
+    "KOD": "TM40-10",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 5000 kg/h 3 Bar",
+    "KOD": "TM50-3",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 5000 kg/h 6 Bar",
+    "KOD": "TM50-6",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 5000 kg/h 8 Bar",
+    "KOD": "TM50-8",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 5000 kg/h 10 Bar",
+    "KOD": "TM50-10",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Kazan",
+    "Üst Başlık": "Buhar Kazanı",
+    "Alt Başlık": "Turmalin",
+    "Detay": "Turmalin 5000 kg/h 14 Bar",
+    "KOD": "TM50-14",
+    "Yakıt Tipi": "Multi Yakıt"
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 335 kW 3 Bar",
+    "KOD": "BGK-335-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 506 kW 3 Bar",
+    "KOD": "BGK-506-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 651 kW 3 Bar",
+    "KOD": "BGK-651-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 758 kW 3 Bar",
+    "KOD": "BGK-758-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 1200 kW 3 Bar",
+    "KOD": "BGK-1200-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 1800 kW 3 Bar",
+    "KOD": "BGK-1800-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 2400 kW 3 Bar",
+    "KOD": "BGK-2400-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 3000 kW 3 Bar",
+    "KOD": "BGK-3000-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 3600 kW 3 Bar",
+    "KOD": "BGK-3600-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 4200 kW 3 Bar",
+    "KOD": "BGK-4200-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 4800 kW 3 Bar",
+    "KOD": "BGK-4800-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 5400 kW 3 Bar",
+    "KOD": "BGK-5400-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 6000 kW 3 Bar",
+    "KOD": "BGK-6000-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 6600 kW 3 Bar",
+    "KOD": "BGK-6600-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 7200 kW 3 Bar",
+    "KOD": "BGK-7200-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 8400 kW 3 Bar",
+    "KOD": "BGK-8400-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 9600 kW 3 Bar",
+    "KOD": "BGK-9600-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Kondenseri 10800 kW 3 Bar",
+    "KOD": "BGK-10800-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Kondenseri",
+    "Detay": "Baca Gazı Ekonomizeri 107 kW 3 Bar",
+    "KOD": "BGE-107-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 510 kW",
+    "KOD": "BACA-CC-510",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 660 kW",
+    "KOD": "BACA-CC-660",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 810 kW",
+    "KOD": "BACA-CC-810",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 960 kW",
+    "KOD": "BACA-CC-960",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 1200 kW",
+    "KOD": "BACA-CC-1200",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 1500 kW",
+    "KOD": "BACA-CC-1500",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 1800 kW",
+    "KOD": "BACA-CC-1800",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 2400 kW",
+    "KOD": "BACA-CC-2400",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 3000 kW",
+    "KOD": "BACA-CC-3000",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 3600 kW",
+    "KOD": "BACA-CC-3600",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 4200 kW",
+    "KOD": "BACA-CC-4200",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 4800 kW",
+    "KOD": "BACA-CC-4800",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 5400 kW",
+    "KOD": "BACA-CC-5400",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 6000 kW",
+    "KOD": "BACA-CC-6000",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 6600 kW",
+    "KOD": "BACA-CC-6600",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 7200 kW",
+    "KOD": "BACA-CC-7200",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 8400 kW",
+    "KOD": "BACA-CC-8400",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 9600 kW",
+    "KOD": "BACA-CC-9600",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Çift Cidarlı Baca",
+    "Detay": "Çift Cidarlı Baca 10800 kW",
+    "KOD": "BACA-CC-10800",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Dispozisyon Ekipmanları",
+    "Detay": "Dispozisyon Ekipmanları 3000000 kcal/h 3 Bar",
+    "KOD": "DSP-3000-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Dispozisyon Ekipmanları",
+    "Detay": "Dispozisyon Ekipmanları 3500000 kcal/h 3 Bar",
+    "KOD": "DSP-3500-3",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Dispozisyon Ekipmanları",
+    "Detay": "Dispozisyon Ekipmanları 4000000 kcal/h 3 Bar",
+    "KOD": "DSP-4000-4",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Dispozisyon Ekipmanları",
+    "Detay": "Dispozisyon Ekipmanları 2500000 kcal/h 3 Bar",
+    "KOD": "DSP-2500-4",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Yer Bunkeri",
+    "Detay": "Yer Bunkeri",
+    "KOD": "YB",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "4 Hücreli Multisiklon",
+    "Detay": "4 Hücreli Multisiklon",
+    "KOD": "MLT-4",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "6 Hücreli Multisiklon",
+    "Detay": "6 Hücreli Multisiklon",
+    "KOD": "MLT-6",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Buhar Kazanı Ekipmanları",
+    "Detay": "",
+    "KOD": "BKE",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Temiz Hava Fanı Çarkı",
+    "Detay": "Temiz Hava Fanı Çarkı",
+    "KOD": "THFC",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Fanı Çarkı",
+    "Detay": "Baca Gazı Fanı Çarkı",
+    "KOD": "BGFC",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Ekonomizeri",
+    "Detay": "",
+    "KOD": "BGE",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Pota",
+    "Detay": "Pota 3500000 kcal/h",
+    "KOD": "POTA-3500",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Kondenser",
+    "Detay": "",
+    "KOD": "KDS",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "CO2 Dozajlama Fanı",
+    "Detay": "CO2 Dozajlama Fanı 7,5 kW",
+    "KOD": "CO2F-7,5",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Baca Gazı Fanı",
+    "Detay": "",
+    "KOD": "BGF",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Ayağı  Ø219,1",
+    "Detay": "Kollektör Ayağı  Ø219,1",
+    "KOD": "KOL-219,1",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Ayağı  Ø323",
+    "Detay": "Kollektör Ayağı  Ø323",
+    "KOD": "KOL-323",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Ayağı  Ø273",
+    "Detay": "Kollektör Ayağı  Ø273",
+    "KOD": "KOL-273",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Ayağı  Ø355",
+    "Detay": "Kollektör Ayağı  Ø355",
+    "KOD": "KOL-355",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Ayağı  Ø406",
+    "Detay": "Kollektör Ayağı  Ø406",
+    "KOD": "KOL-406",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Ayağı  Ø457",
+    "Detay": "Kollektör Ayağı  Ø457",
+    "KOD": "KOL-457",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Ayağı  Ø508",
+    "Detay": "Kollektör Ayağı  Ø508",
+    "KOD": "KOL-508",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Borusu",
+    "Detay": "Kollektör Borusu Ø355",
+    "KOD": "KOL-BORU-355",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Borusu",
+    "Detay": "Kollektör Borusu Ø406",
+    "KOD": "KOL-BORU-406",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Borusu",
+    "Detay": "Kollektör Borusu Ø457",
+    "KOD": "KOL-BORU-457",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Borusu",
+    "Detay": "Kollektör Borusu Ø508",
+    "KOD": "KOL-BORU-508",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Borusu",
+    "Detay": "Kollektör Borusu Ø613",
+    "KOD": "KOL-BORU-613",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Borusu",
+    "Detay": "Kollektör Borusu Ø711",
+    "KOD": "KOL-BORU-711",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör Ayağı  Ø613",
+    "Detay": "Kollektör Ayağı  Ø613",
+    "KOD": "KOL-613",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Kollektör",
+    "Detay": "Kollektör",
+    "KOD": "KOLLEKTOR",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Hava Atıcı Grubu",
+    "Detay": "Kısa Hava Atıcı Grubu",
+    "KOD": "HVA-K",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Hava Atıcı Grubu",
+    "Detay": "Uzun Hava Atıcı Grubu",
+    "KOD": "HVA-U",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Tesisat",
+    "Üst Başlık": "Sera Tesisat Malzemesi",
+    "Alt Başlık": "Sera Tesisat Malzemeleri",
+    "Detay": "Sera Tesisat Malzemeleri",
+    "KOD": "STM",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Servis",
+    "Üst Başlık": "Servis Malzemesi",
+    "Alt Başlık": "Stoker Helezonu",
+    "Detay": "Stoker Helezonu",
+    "KOD": "SRV-0004",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Servis",
+    "Üst Başlık": "Servis Malzemesi",
+    "Alt Başlık": "Helezon",
+    "Detay": "Helezon",
+    "KOD": "SRV-0003",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Servis",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Tek Cidarlı Baca",
+    "Detay": "Tek Cidarlı Baca 3600 kW",
+    "KOD": "TCB-3600",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Ara Kanal",
+    "Detay": "",
+    "KOD": "KE-01",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Ekipman",
+    "Üst Başlık": "Kazan Ekipmanı",
+    "Alt Başlık": "Sera İçi Fan",
+    "Detay": "",
+    "KOD": "KE-02",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Servis",
+    "Üst Başlık": "Servis Malzemesi",
+    "Alt Başlık": "Servis Malzemesi",
+    "Detay": "",
+    "KOD": "SRV-0001",
+    "Yakıt Tipi": ""
+  },
+  {
+    "Ürün Yelpazesi": "Servis",
+    "Üst Başlık": "Servis Malzemesi",
+    "Alt Başlık": "Pota",
+    "Detay": "",
+    "KOD": "SRV-0002",
+    "Yakıt Tipi": ""
+  }
+]
