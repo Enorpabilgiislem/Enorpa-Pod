@@ -54,6 +54,25 @@
   .btn-primary { background: var(--orange); color: #fff; }
   .btn-primary:hover { background: #d44418; }
   .btn-primary:active { transform: scale(.98); }
+  .pdf-dropdown { position: relative; display: inline-block; }
+  .pdf-menu {
+    display: none; position: absolute; right: 0; top: calc(100% + 6px);
+    background: #2B2B2B; border-radius: 6px; min-width: 230px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.4); z-index: 300; overflow: hidden;
+    border: 1px solid #444;
+  }
+  .pdf-menu.open { display: block; }
+  .pdf-menu-item {
+    display: flex; align-items: center; gap: 12px; width: 100%;
+    padding: 12px 16px; background: transparent; border: none;
+    color: #ddd; cursor: pointer; font-family: inherit; text-align: left;
+    transition: background .15s; border-bottom: 1px solid #383838;
+  }
+  .pdf-menu-item:last-child { border-bottom: none; }
+  .pdf-menu-item:hover { background: rgba(232,80,26,.15); }
+  .pdf-menu-item strong { display: block; font-size: 13px; color: #fff; margin-bottom: 2px; }
+  .pdf-menu-item small { font-size: 11px; color: #888; }
+  .pmi-icon { font-size: 20px; flex-shrink: 0; }
 
   /* ── LAYOUT ── */
   .layout { display: flex; min-height: calc(100vh - 60px); }
@@ -142,6 +161,13 @@
     background: transparent; resize: none;
   }
   .field-input:focus { background: #FFFAF8; }
+  select.field-input {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B6B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center;
+    padding-right: 32px; cursor: pointer;
+  }
+  select.field-input:focus { background-color: #FFFAF8; }
   textarea.field-input { padding-top: 8px; min-height: 60px; }
 
   /* ── CHECKBOX GROUP ── */
@@ -160,6 +186,97 @@
   .two-col .field-label { width: 160px; min-width: 160px; }
   .two-col .col { display: flex; align-items: stretch; border-right: 1px solid var(--border); }
   .two-col .col:last-child { border-right: none; }
+
+  /* ── COMPACT ROW ── */
+  .compact-row { display: flex; flex-wrap: nowrap; align-items: center; min-height: 36px; }
+  .compact-label {
+    width: auto !important; min-width: auto !important;
+    padding: 5px 8px 5px 10px; font-size: 11px; white-space: nowrap;
+    flex-shrink: 0; background: var(--gray3); border-right: 1px solid var(--border);
+  }
+  .compact-value { flex: 1; min-width: 80px; border-right: 1px solid var(--border); }
+  .compact-value:last-child { border-right: none; }
+  .compact-value-sm { width: 70px; flex-shrink: 0; border-right: 1px solid var(--border); }
+  .compact-input { padding: 5px 8px !important; font-size: 12px !important; }
+
+  /* ── KUR PANELİ ── */
+  .kur-panel {
+    background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-bottom: 20px;
+    scroll-margin-top: 76px;
+  }
+  .kur-header {
+    display: flex; align-items: center; background: var(--gray1); min-height: 40px;
+  }
+  .kur-header .accent { width: 5px; min-height: 40px; background: var(--orange); flex-shrink: 0; }
+  .kur-header h2 { padding: 8px 16px; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: .8px; text-transform: uppercase; flex: 1; }
+  .kur-header small { padding-right: 14px; font-size: 11px; color: #aaa; }
+  .kur-body { display: flex; align-items: center; gap: 0; }
+  .kur-field {
+    display: flex; align-items: center; gap: 0; flex: 1;
+    border-right: 1px solid var(--border);
+  }
+  .kur-field:last-child { border-right: none; }
+  .kur-label {
+    padding: 8px 12px; font-size: 12px; font-weight: 700; color: var(--mid);
+    background: var(--gray3); white-space: nowrap; border-right: 1px solid var(--border);
+  }
+  .kur-label span { color: var(--orange); }
+  .kur-input {
+    flex: 1; border: none; outline: none; padding: 8px 12px;
+    font-size: 14px; font-weight: 600; color: var(--gray1);
+    font-family: inherit; background: #fff;
+  }
+  .kur-input:focus { background: #FFFAF8; }
+  .kur-note {
+    padding: 5px 14px; background: #FFFBF0; font-size: 11px; color: #888;
+    border-top: 1px solid #F0E8C8; font-style: italic;
+  }
+
+  /* ── ÖZET PANELİ (sepet tasarımı) ── */
+  .ozet-panel {
+    background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-bottom: 20px;
+    scroll-margin-top: 76px;
+  }
+  .ozet-header {
+    display: flex; align-items: center; background: var(--gray1); min-height: 44px;
+  }
+  .ozet-header .accent { width: 5px; min-height: 44px; background: var(--orange); flex-shrink: 0; }
+  .ozet-header h2 { padding: 10px 16px; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: .8px; text-transform: uppercase; }
+  .ozet-empty { color: var(--mid); font-size: 13px; font-style: italic; padding: 16px; }
+
+  /* Sepet tablosu */
+  .ozet-table { width: 100%; border-collapse: collapse; }
+  .ozet-table thead tr { background: var(--gray4); }
+  .ozet-table th {
+    padding: 8px 14px; font-size: 11px; font-weight: 700; color: var(--mid);
+    text-align: left; letter-spacing: .5px; text-transform: uppercase;
+    border-bottom: 2px solid var(--border);
+  }
+  .ozet-table th.right { text-align: right; }
+  .ozet-table td {
+    padding: 10px 14px; font-size: 13px; border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .ozet-table tbody tr:hover { background: #FFFAF8; }
+  .ozet-table tbody tr:last-child td { border-bottom: none; }
+  .ozet-no { font-weight: 700; color: var(--gray2); font-size: 12px; width: 30px; }
+  .ozet-name { color: var(--gray1); font-weight: 600; }
+  .ozet-currency { font-size: 11px; color: var(--mid); background: var(--gray3); padding: 2px 6px; border-radius: 3px; margin-left: 6px; }
+  .ozet-birim { color: var(--mid); font-size: 12px; }
+  .ozet-adet { text-align: center; color: var(--gray1); font-weight: 600; }
+  .ozet-tutar-orig { text-align: right; font-weight: 700; color: var(--gray1); white-space: nowrap; }
+  .ozet-tutar-tl { text-align: right; font-weight: 600; color: var(--gray2); font-size: 12px; white-space: nowrap; }
+  .ozet-tutar-usd { text-align: right; font-size: 11px; color: var(--mid); white-space: nowrap; }
+
+  /* Toplam satırı */
+  .ozet-footer { background: var(--gray1); }
+  .ozet-footer td { padding: 10px 14px; border-bottom: none; }
+  .ozet-footer-label { font-size: 12px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: .5px; }
+  .ozet-footer-tl { text-align: right; font-size: 16px; font-weight: 700; color: #fff; white-space: nowrap; }
+  .ozet-footer-usd { text-align: right; font-size: 13px; font-weight: 600; color: #E8C4B0; white-space: nowrap; }
+  .ozet-footer-eur { text-align: right; font-size: 12px; color: #aaa; white-space: nowrap; }
 
   /* ── PRICE ROW ── */
   .price-row { background: var(--orange-light) !important; }
@@ -320,8 +437,21 @@
     <span class="sub" style="margin-left:10px">POD FORMU</span>
   </div>
   <div class="topbar-actions">
+    <button class="btn btn-ghost" onclick="openUrunModal()" style="border-color:#7A5C54;color:#C8A090">📦 Ürün Yelpazesi</button>
     <button class="btn btn-ghost" onclick="clearForm()">Temizle</button>
-    <button class="btn btn-primary" onclick="if(validateForm()) generatePDF()">⬇ PDF İndir</button>
+    <div class="pdf-dropdown" id="pdfDropdown">
+      <button class="btn btn-primary" onclick="togglePdfMenu()">⬇ PDF İndir ▾</button>
+      <div class="pdf-menu" id="pdfMenu">
+        <button class="pdf-menu-item" onclick="closePdfMenu();if(validateForm()) generatePDF(true)">
+          <span class="pmi-icon">📄</span>
+          <div><strong>Tam PDF</strong><small>Birim fiyatlar dahil (iç kullanım)</small></div>
+        </button>
+        <button class="pdf-menu-item" onclick="closePdfMenu();if(validateForm()) generatePDF(false)">
+          <span class="pmi-icon">📋</span>
+          <div><strong>Müşteri PDF</strong><small>Birim fiyatlar gizli</small></div>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -336,6 +466,8 @@
     <div class="sidebar-label">Form Bölümleri</div>
     <a class="sidebar-item active" href="#genel"><span class="dot"></span>Genel Bilgiler</a>
     <a class="sidebar-item" href="#firma"><span class="dot"></span>Firma Bilgileri</a>
+    <a class="sidebar-item" href="#kur-panel"><span class="dot"></span>Döviz Kurları</a>
+    <a class="sidebar-item" href="#ozet-panel"><span class="dot"></span>Satış Özeti</a>
     <a class="sidebar-item" href="#soru"><span class="dot"></span>Proje Türü Sorusu</a>
   </div>
   <div class="sidebar-section">
@@ -404,6 +536,34 @@
   </div>
 </div>
 
+<!-- KUR PANELİ -->
+<div class="kur-panel" id="kur-panel">
+  <div class="kur-header">
+    <div class="accent"></div>
+    <h2>💱 Döviz Kurları</h2>
+    <small>Anlaşma günü sabit kur — manuel girin</small>
+  </div>
+  <div class="kur-body">
+    <div class="kur-field">
+      <div class="kur-label">1 <span>USD</span> =</div>
+      <input class="kur-input" type="number" id="kur_usd" placeholder="0.00" step="0.01" min="0" oninput="updateOzet()">
+      <div class="kur-label" style="background:transparent;border:none;color:var(--mid)">₺ TL</div>
+    </div>
+    <div class="kur-field">
+      <div class="kur-label">1 <span>EUR</span> =</div>
+      <input class="kur-input" type="number" id="kur_eur" placeholder="0.00" step="0.01" min="0" oninput="updateOzet()">
+      <div class="kur-label" style="background:transparent;border:none;color:var(--mid)">₺ TL</div>
+    </div>
+  </div>
+  <div class="kur-note">⚠ Kur değerleri sözleşme tarihindeki sabit kuru yansıtmalıdır. Otomatik güncellenmez.</div>
+</div>
+
+<!-- ÖZET PANELİ -->
+<div class="ozet-panel" id="ozet-panel">
+  <div class="ozet-header"><div class="accent"></div><h2>🛒 Satış Özeti</h2></div>
+  <div id="ozet-body"><span class="ozet-empty">Henüz satış modülü eklenmedi.</span></div>
+</div>
+
 <!-- PROJE TÜRÜ SORUSU -->
 <div class="soru-section" id="soru">
   <div class="soru-title">PROJE TÜRÜ SORUSU</div>
@@ -419,34 +579,32 @@
 <div class="form-section" id="kazan" data-module="true" style="display:none">
   <div class="module-header"><div class="accent"></div><h2>Kazan Satışı</h2></div>
   <div class="section-body">
-    <div class="kazan-label">Kazan #1</div>
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Kazan Modeli:</div><div class="field-value"><input class="field-input" type="text" id="k1_model"></div></div>
-      <div class="col"><div class="field-label">Kapasite (kcal/h):</div><div class="field-value"><input class="field-input" type="text" id="k1_kapasite"></div></div>
+    <div class="form-row compact-row">
+      <div class="field-label compact-label">Kazan Modeli:</div>
+      <div class="field-value compact-value"><select class="field-input compact-input kazan-model-select" id="k1_model" onchange="onKazanModelChange(this)">
+        <option value="">— Ürün Seçin —</option>
+      </select></div>
+      <div class="field-label compact-label">Kapasite (kcal/h):</div>
+      <div class="field-value compact-value"><input class="field-input compact-input" type="text" id="k1_kapasite" readonly style="background:#F4F4F4;color:#404040;cursor:default" placeholder="Ürün seçince dolar"></div>
+      <div class="field-label compact-label">Yakıt Türü:</div>
+      <div class="field-value compact-value"><input class="field-input compact-input" type="text" id="k1_yakit" readonly style="background:#F4F4F4;color:#404040;cursor:default" placeholder="Ürün seçince dolar"></div>
+      <div class="field-label compact-label">Adet:</div>
+      <div class="field-value compact-value-sm"><input class="field-input compact-input" type="text" id="k1_adet" oninput="calcTotal(this)"></div>
     </div>
-    <div class="form-row alt two-col">
-      <div class="col"><div class="field-label">Yakıt Türü:</div><div class="field-value"><input class="field-input" type="text" id="k1_yakit"></div></div>
-      <div class="col"><div class="field-label">Adet:</div><div class="field-value"><input class="field-input" type="text" id="k1_adet"></div></div>
+    <div class="form-row compact-row price-row">
+      <div class="field-label compact-label price-label">Birim Fiyat (KDV Hariç):</div>
+      <div class="field-value compact-value" style="display:flex;align-items:center">
+        <select class="field-input compact-input currency-select" id="k1_para" style="width:72px;flex-shrink:0;padding:5px 4px;font-size:11px">
+        <option value="TL">₺ TL</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select><input class="field-input compact-input" type="text" id="k1_birim" placeholder="0.00" oninput="calcTotal(this)" style="flex:1">
+      </div>
+      <div class="field-label compact-label price-label">Toplam Tutar:</div>
+      <div class="field-value compact-value"><input class="field-input compact-input" type="text" id="k1_toplam" readonly tabindex="-1" style="background:#F4F4F4;color:#404040;font-weight:600;cursor:default"></div>
     </div>
-    <div class="form-row price-row two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="k1_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="k1_toplam"></div></div>
-    </div>
-    <div class="kazan-sep"></div>
-    <div class="kazan-label">Kazan #2</div>
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Kazan Modeli:</div><div class="field-value"><input class="field-input" type="text" id="k2_model"></div></div>
-      <div class="col"><div class="field-label">Kapasite (kcal/h):</div><div class="field-value"><input class="field-input" type="text" id="k2_kapasite"></div></div>
-    </div>
-    <div class="form-row alt two-col">
-      <div class="col"><div class="field-label">Yakıt Türü:</div><div class="field-value"><input class="field-input" type="text" id="k2_yakit"></div></div>
-      <div class="col"><div class="field-label">Adet:</div><div class="field-value"><input class="field-input" type="text" id="k2_adet"></div></div>
-    </div>
-    <div class="form-row price-row two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="k2_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="k2_toplam"></div></div>
-    </div>
-    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="kazan_notlar" rows="3"></textarea></div></div>
+    <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="kazan_notlar" rows="2"></textarea></div></div>
   </div>
 </div>
 
@@ -454,17 +612,23 @@
 <div class="form-section" id="malzeme" data-module="true" style="display:none">
   <div class="module-header"><div class="accent"></div><h2>Malzeme Satışı</h2><button class="remove-btn" onclick="toggleModule('malzeme')">✕ Kaldır</button></div>
   <div class="section-body">
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Malzeme Türü:</div><div class="field-value"><input class="field-input" type="text" id="malz_tur"></div></div>
-      <div class="col"><div class="field-label">Marka / Model:</div><div class="field-value"><input class="field-input" type="text" id="malz_marka"></div></div>
+    <div class="form-row compact-row">
+      <div class="field-label compact-label">Malzeme Türü:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="malz_tur"></div>
+      <div class="field-label compact-label">Marka / Model:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="malz_marka"></div>
+      <div class="field-label compact-label">Miktar / Birim:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="malz_miktar" oninput="calcTotal(this)"></div>
+      <div class="field-label compact-label">Teknik Özellik:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="malz_teknik"></div>
     </div>
-    <div class="form-row alt two-col">
-      <div class="col"><div class="field-label">Miktar / Birim:</div><div class="field-value"><input class="field-input" type="text" id="malz_miktar"></div></div>
-      <div class="col"><div class="field-label">Teknik Özellik:</div><div class="field-value"><input class="field-input" type="text" id="malz_teknik"></div></div>
-    </div>
-    <div class="form-row price-row two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="malz_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="malz_toplam"></div></div>
+    <div class="form-row compact-row price-row">
+      <div class="field-label compact-label price-label">Birim Fiyat (KDV Hariç):</div>
+      <div class="field-value compact-value" style="display:flex;align-items:center">
+        <select class="field-input compact-input currency-select" id="malz_para" style="width:72px;flex-shrink:0;padding:5px 4px;font-size:11px">
+        <option value="TL">₺ TL</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select><input class="field-input compact-input" type="text" id="malz_birim" placeholder="0.00" oninput="calcTotal(this)" style="flex:1">
+      </div>
+      <div class="field-label compact-label price-label">Toplam Tutar:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="malz_toplam" readonly tabindex="-1" style="background:#F4F4F4;color:#404040;font-weight:600;cursor:default"></div>
     </div>
     <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="malz_notlar" rows="3"></textarea></div></div>
   </div>
@@ -474,13 +638,19 @@
 <div class="form-section" id="sera-tesisat" data-module="true" style="display:none">
   <div class="module-header"><div class="accent"></div><h2>Sera Tesisatı</h2><button class="remove-btn" onclick="toggleModule('sera-tesisat')">✕ Kaldır</button></div>
   <div class="section-body">
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Tesisat Türü:</div><div class="field-value"><input class="field-input" type="text" id="st_tur"></div></div>
-      <div class="col"><div class="field-label">Alan (m²):</div><div class="field-value"><input class="field-input" type="text" id="st_alan"></div></div>
-    </div>
-    <div class="form-row price-row alt two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="st_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="st_toplam"></div></div>
+    <div class="form-row compact-row">
+      <div class="field-label compact-label">Tesisat Türü:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="st_tur"></div>
+      <div class="field-label compact-label">Alan (m²):</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="st_alan" oninput="calcTotal(this)"></div>
+      <div class="field-label compact-label price-label">Birim Fiyat (KDV Hariç):</div>
+      <div class="field-value compact-value" style="display:flex;align-items:center">
+        <select class="field-input compact-input currency-select" id="st_para" style="width:72px;flex-shrink:0;padding:5px 4px;font-size:11px">
+        <option value="TL">₺ TL</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select><input class="field-input compact-input" type="text" id="st_birim" placeholder="0.00" oninput="calcTotal(this)" style="flex:1">
+      </div>
+      <div class="field-label compact-label price-label">Toplam Tutar:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="st_toplam" readonly tabindex="-1" style="background:#F4F4F4;color:#404040;font-weight:600;cursor:default"></div>
     </div>
     <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="st_notlar" rows="3"></textarea></div></div>
   </div>
@@ -490,13 +660,19 @@
 <div class="form-section" id="servis" data-module="true" style="display:none">
   <div class="module-header"><div class="accent"></div><h2>Servis Hizmeti</h2><button class="remove-btn" onclick="toggleModule('servis')">✕ Kaldır</button></div>
   <div class="section-body">
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Servis Türü:</div><div class="field-value"><input class="field-input" type="text" id="sv_tur"></div></div>
-      <div class="col"><div class="field-label">Süre / Kapsam:</div><div class="field-value"><input class="field-input" type="text" id="sv_sure"></div></div>
-    </div>
-    <div class="form-row price-row alt two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="sv_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="sv_toplam"></div></div>
+    <div class="form-row compact-row">
+      <div class="field-label compact-label">Servis Türü:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="sv_tur"></div>
+      <div class="field-label compact-label">Süre / Kapsam:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="sv_sure"></div>
+      <div class="field-label compact-label price-label">Birim Fiyat (KDV Hariç):</div>
+      <div class="field-value compact-value" style="display:flex;align-items:center">
+        <select class="field-input compact-input currency-select" id="sv_para" style="width:72px;flex-shrink:0;padding:5px 4px;font-size:11px">
+        <option value="TL">₺ TL</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select><input class="field-input compact-input" type="text" id="sv_birim" placeholder="0.00" style="flex:1">
+      </div>
+      <div class="field-label compact-label price-label">Toplam Tutar:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="sv_toplam" readonly tabindex="-1" style="background:#F4F4F4;color:#404040;font-weight:600;cursor:default"></div>
     </div>
     <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="sv_notlar" rows="3"></textarea></div></div>
   </div>
@@ -506,13 +682,19 @@
 <div class="form-section" id="yedek" data-module="true" style="display:none">
   <div class="module-header"><div class="accent"></div><h2>Yedek Parça Hizmeti</h2><button class="remove-btn" onclick="toggleModule('yedek')">✕ Kaldır</button></div>
   <div class="section-body">
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Parça Adı / Kodu:</div><div class="field-value"><input class="field-input" type="text" id="yp_parca"></div></div>
-      <div class="col"><div class="field-label">Adet:</div><div class="field-value"><input class="field-input" type="text" id="yp_adet"></div></div>
-    </div>
-    <div class="form-row price-row alt two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="yp_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="yp_toplam"></div></div>
+    <div class="form-row compact-row">
+      <div class="field-label compact-label">Parça Adı / Kodu:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="yp_parca"></div>
+      <div class="field-label compact-label">Adet:</div><div class="field-value compact-value-sm"><input class="field-input compact-input" type="text" id="yp_adet" oninput="calcTotal(this)"></div>
+      <div class="field-label compact-label price-label">Birim Fiyat (KDV Hariç):</div>
+      <div class="field-value compact-value" style="display:flex;align-items:center">
+        <select class="field-input compact-input currency-select" id="yp_para" style="width:72px;flex-shrink:0;padding:5px 4px;font-size:11px">
+        <option value="TL">₺ TL</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select><input class="field-input compact-input" type="text" id="yp_birim" placeholder="0.00" oninput="calcTotal(this)" style="flex:1">
+      </div>
+      <div class="field-label compact-label price-label">Toplam Tutar:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="yp_toplam" readonly tabindex="-1" style="background:#F4F4F4;color:#404040;font-weight:600;cursor:default"></div>
     </div>
     <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="yp_notlar" rows="3"></textarea></div></div>
   </div>
@@ -522,17 +704,21 @@
 <div class="form-section" id="servis-yedek" data-module="true" style="display:none">
   <div class="module-header"><div class="accent"></div><h2>Servis + Yedek Parça Hizmeti</h2><button class="remove-btn" onclick="toggleModule('servis-yedek')">✕ Kaldır</button></div>
   <div class="section-body">
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Servis Detayı:</div><div class="field-value"><input class="field-input" type="text" id="sy_detay"></div></div>
-      <div class="col"><div class="field-label">Parça Adı / Kodu:</div><div class="field-value"><input class="field-input" type="text" id="sy_parca"></div></div>
-    </div>
-    <div class="form-row alt two-col">
-      <div class="col"><div class="field-label">Süre / Kapsam:</div><div class="field-value"><input class="field-input" type="text" id="sy_sure"></div></div>
-      <div class="col"><div class="field-label">Adet:</div><div class="field-value"><input class="field-input" type="text" id="sy_adet"></div></div>
-    </div>
-    <div class="form-row price-row two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="sy_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="sy_toplam"></div></div>
+    <div class="form-row compact-row">
+      <div class="field-label compact-label">Servis Detayı:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="sy_detay"></div>
+      <div class="field-label compact-label">Parça Adı / Kodu:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="sy_parca"></div>
+      <div class="field-label compact-label">Süre / Kapsam:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="sy_sure"></div>
+      <div class="field-label compact-label">Adet:</div><div class="field-value compact-value-sm"><input class="field-input compact-input" type="text" id="sy_adet" oninput="calcTotal(this)"></div>
+      <div class="field-label compact-label price-label">Birim Fiyat (KDV Hariç):</div>
+      <div class="field-value compact-value" style="display:flex;align-items:center">
+        <select class="field-input compact-input currency-select" id="sy_para" style="width:72px;flex-shrink:0;padding:5px 4px;font-size:11px">
+        <option value="TL">₺ TL</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select><input class="field-input compact-input" type="text" id="sy_birim" placeholder="0.00" oninput="calcTotal(this)" style="flex:1">
+      </div>
+      <div class="field-label compact-label price-label">Toplam Tutar:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="sy_toplam" readonly tabindex="-1" style="background:#F4F4F4;color:#404040;font-weight:600;cursor:default"></div>
     </div>
     <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="sy_notlar" rows="3"></textarea></div></div>
   </div>
@@ -542,13 +728,19 @@
 <div class="form-section" id="proje" data-module="true" style="display:none">
   <div class="module-header"><div class="accent"></div><h2>Proje Hizmeti</h2><button class="remove-btn" onclick="toggleModule('proje')">✕ Kaldır</button></div>
   <div class="section-body">
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Proje Türü:</div><div class="field-value"><input class="field-input" type="text" id="ph_tur"></div></div>
-      <div class="col"><div class="field-label">Kapsam:</div><div class="field-value"><input class="field-input" type="text" id="ph_kapsam"></div></div>
-    </div>
-    <div class="form-row price-row alt two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="ph_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="ph_toplam"></div></div>
+    <div class="form-row compact-row">
+      <div class="field-label compact-label">Proje Türü:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="ph_tur"></div>
+      <div class="field-label compact-label">Kapsam:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="ph_kapsam"></div>
+      <div class="field-label compact-label price-label">Birim Fiyat (KDV Hariç):</div>
+      <div class="field-value compact-value" style="display:flex;align-items:center">
+        <select class="field-input compact-input currency-select" id="ph_para" style="width:72px;flex-shrink:0;padding:5px 4px;font-size:11px">
+        <option value="TL">₺ TL</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select><input class="field-input compact-input" type="text" id="ph_birim" placeholder="0.00" style="flex:1">
+      </div>
+      <div class="field-label compact-label price-label">Toplam Tutar:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="ph_toplam" readonly tabindex="-1" style="background:#F4F4F4;color:#404040;font-weight:600;cursor:default"></div>
     </div>
     <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="ph_notlar" rows="3"></textarea></div></div>
   </div>
@@ -558,13 +750,19 @@
 <div class="form-section" id="kesif" data-module="true" style="display:none">
   <div class="module-header"><div class="accent"></div><h2>Keşif Hizmeti</h2><button class="remove-btn" onclick="toggleModule('kesif')">✕ Kaldır</button></div>
   <div class="section-body">
-    <div class="form-row two-col">
-      <div class="col"><div class="field-label">Keşif Bölgesi:</div><div class="field-value"><input class="field-input" type="text" id="kh_bolge"></div></div>
-      <div class="col"><div class="field-label">Tarih:</div><div class="field-value"><input class="field-input" type="date" id="kh_tarih"></div></div>
-    </div>
-    <div class="form-row price-row alt two-col">
-      <div class="col"><div class="field-label price-label">Birim Fiyat (KDV Hariç):</div><div class="field-value"><input class="field-input" type="text" id="kh_birim"></div></div>
-      <div class="col"><div class="field-label price-label">Toplam Tutar:</div><div class="field-value"><input class="field-input" type="text" id="kh_toplam"></div></div>
+    <div class="form-row compact-row">
+      <div class="field-label compact-label">Keşif Bölgesi:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="kh_bolge"></div>
+      <div class="field-label compact-label">Tarih:</div><div class="field-value compact-value-sm"><input class="field-input compact-input" type="date" id="kh_tarih"></div>
+      <div class="field-label compact-label price-label">Birim Fiyat (KDV Hariç):</div>
+      <div class="field-value compact-value" style="display:flex;align-items:center">
+        <select class="field-input compact-input currency-select" id="kh_para" style="width:72px;flex-shrink:0;padding:5px 4px;font-size:11px">
+        <option value="TL">₺ TL</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select><input class="field-input compact-input" type="text" id="kh_birim" placeholder="0.00" style="flex:1">
+      </div>
+      <div class="field-label compact-label price-label">Toplam Tutar:</div><div class="field-value compact-value"><input class="field-input compact-input" type="text" id="kh_toplam" readonly tabindex="-1" style="background:#F4F4F4;color:#404040;font-weight:600;cursor:default"></div>
     </div>
     <div class="form-row"><div class="field-label">Notlar / Açıklama:</div><div class="field-value"><textarea class="field-input" id="kh_notlar" rows="3"></textarea></div></div>
   </div>
@@ -762,6 +960,79 @@
   <div class="pdf-text">PDF oluşturuluyor...</div>
 </div>
 
+<!-- ÜRÜN YELPAZESİ MODAL -->
+<div id="urunModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;overflow-y:auto">
+  <div style="background:#F0EFED;max-width:1000px;margin:40px auto;border-radius:8px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4)">
+    <!-- Modal Header -->
+    <div style="background:#2B2B2B;display:flex;align-items:center;padding:0 20px;height:56px">
+      <div style="width:4px;height:36px;background:#E8501A;border-radius:2px;margin-right:14px"></div>
+      <span style="font-size:15px;font-weight:700;color:#fff;letter-spacing:.5px">ÜRÜN YELPAZESİ</span>
+      <span style="margin-left:10px;font-size:12px;color:#888">Kazan kataloğunu yönetin</span>
+      <button onclick="closeUrunModal()" style="margin-left:auto;background:transparent;border:none;color:#aaa;font-size:22px;cursor:pointer;line-height:1">×</button>
+    </div>
+
+    <!-- Araç çubuğu -->
+    <div style="background:#fff;padding:12px 20px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #E8E8E8;flex-wrap:wrap">
+      <button onclick="showUrunForm()" class="btn btn-primary" style="font-size:12px;padding:7px 16px">+ Ürün Ekle</button>
+      <label class="btn btn-ghost" style="font-size:12px;padding:7px 16px;cursor:pointer">
+        📤 CSV Yükle
+        <input type="file" accept=".csv,.txt" onchange="csvYukle(event)" style="display:none">
+      </label>
+      <button onclick="csvIndir()" class="btn btn-ghost" style="font-size:12px;padding:7px 16px">⬇ CSV İndir</button>
+      <button onclick="ornekCsvIndir()" class="btn btn-ghost" style="font-size:12px;padding:7px 16px">📄 Örnek CSV</button>
+      <input type="text" id="urunAra" oninput="renderUrunTable()" placeholder="Ürün ara..." style="margin-left:auto;padding:7px 12px;border:1px solid #D0D0D0;border-radius:4px;font-size:12px;font-family:inherit;width:200px">
+    </div>
+
+    <!-- Ürün form (gizli/görünür) -->
+    <div id="urunForm" style="display:none;background:#FFF8F5;padding:16px 20px;border-bottom:1px solid #F0C0A8">
+      <div style="display:grid;grid-template-columns:1fr 1fr 2fr 1fr 1fr 1fr;gap:10px;align-items:end">
+        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">ÜST BAŞLIK *</label>
+          <input id="f_ust" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="Kazan"></div>
+        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">ALT BAŞLIK *</label>
+          <input id="f_alt" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="Sıcak Su Kazanı"></div>
+        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">DETAY (Ürün Adı) *</label>
+          <input id="f_detay" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="Akuamarin 510 kW 3 Bar"></div>
+        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">KOD</label>
+          <input id="f_kod" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="AK510-3"></div>
+        <div><label style="font-size:11px;color:#6B6B6B;font-weight:700;display:block;margin-bottom:4px">YAKIT TİPİ</label>
+          <input id="f_yakit" class="field-input" style="border:1px solid #D0D0D0;border-radius:4px;padding:7px 10px;font-size:13px;width:100%" placeholder="Sıvı/Gaz Yakıtlı"></div>
+        <div style="display:flex;gap:8px">
+          <button onclick="saveUrun()" class="btn btn-primary" style="font-size:12px;padding:7px 14px;flex:1">Kaydet</button>
+          <button onclick="cancelUrunForm()" class="btn btn-ghost" style="font-size:12px;padding:7px 14px">İptal</button>
+        </div>
+      </div>
+      <input type="hidden" id="f_editId">
+    </div>
+
+    <!-- Tablo -->
+    <div style="overflow-x:auto;max-height:480px;overflow-y:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13px" id="urunTableEl">
+        <thead style="position:sticky;top:0;background:#404040;color:#fff">
+          <tr>
+            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">#</th>
+            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">ÜST BAŞLIK</th>
+            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">ALT BAŞLIK</th>
+            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">DETAY (Ürün Adı)</th>
+            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">KOD</th>
+            <th style="padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px">YAKIT TİPİ</th>
+            <th style="padding:10px 12px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.5px">İŞLEM</th>
+          </tr>
+        </thead>
+        <tbody id="urunTableBody"></tbody>
+      </table>
+    </div>
+    <div style="padding:10px 20px;background:#fff;border-top:1px solid #E8E8E8;font-size:12px;color:#888;display:flex;justify-content:space-between;align-items:center">
+      <span id="urunCount">0 ürün</span>
+      <button onclick="tumunuSil()" style="background:transparent;border:none;color:#E8501A;font-size:12px;cursor:pointer;font-family:inherit">🗑 Tümünü Sil</button>
+    </div>
+    <div id="githubInfo" style="padding:8px 20px;background:#F0F8FF;border-top:1px solid #D0E8F0;font-size:11px;color:#555;display:none">
+      <strong>GitHub kaynağı:</strong> <span id="githubUrl"></span> — 
+      <em>Değişikliklerinizi kalıcı hale getirmek için CSV indirip urunler.json dosyasını güncelleyin.</em>
+    </div>
+  </div>
+</div>
+
+
 <script>
 // ── SIDEBAR ACTIVE ──
 const sections = document.querySelectorAll('.form-section, .soru-section');
@@ -869,6 +1140,7 @@ function addModuleInstance(templateId) {
 
   clone.scrollIntoView({ behavior: 'smooth', block: 'start' });
   renderSidebarModules();
+  updateOzet();
 }
 
 function removeModuleInstance(iid) {
@@ -900,6 +1172,147 @@ function removeLastInstance(templateId) {
   if (lastKey) removeModuleInstance(lastKey);
 }
 
+function updateOzet() {
+  const body = document.getElementById('ozet-body');
+  if (!body) return;
+
+  if (moduleInstances.size === 0) {
+    body.innerHTML = '<span class="ozet-empty">Henüz satış modülü eklenmedi.</span>';
+    return;
+  }
+
+  const kurUsd = parseFloat(document.getElementById('kur_usd')?.value) || 0;
+  const kurEur = parseFloat(document.getElementById('kur_eur')?.value) || 0;
+
+  const SYMS = { TL: '₺', USD: '$', EUR: '€', GBP: '£' };
+
+  // Her instance için veri topla
+  const rows = [];
+  let grandTL = 0, grandUSD = 0, grandEUR = 0;
+
+  const toplamSuffixes = {
+    'kazan':'k1_toplam','malzeme':'malz_toplam','sera-tesisat':'st_toplam',
+    'servis':'sv_toplam','yedek':'yp_toplam','servis-yedek':'sy_toplam',
+    'proje':'ph_toplam','kesif':'kh_toplam'
+  };
+  const paraSuffixes = {
+    'kazan':'k1_para','malzeme':'malz_para','sera-tesisat':'st_para',
+    'servis':'sv_para','yedek':'yp_para','servis-yedek':'sy_para',
+    'proje':'ph_para','kesif':'kh_para'
+  };
+  const birimSuffixes = {
+    'kazan':'k1_birim','malzeme':'malz_birim','sera-tesisat':'st_birim',
+    'servis':'sv_birim','yedek':'yp_birim','servis-yedek':'sy_birim',
+    'proje':'ph_birim','kesif':'kh_birim'
+  };
+  const adetSuffixes = {
+    'kazan':'k1_adet','malzeme':'malz_miktar','sera-tesisat':'st_alan',
+    'servis':null,'yedek':'yp_adet','servis-yedek':'sy_adet',
+    'proje':null,'kesif':null
+  };
+
+  let idx = 1;
+  moduleInstances.forEach((inst) => {
+    const tid = inst.templateId;
+    const iid = [...moduleInstances.entries()].find(([k,v])=>v===inst)?.[0] || '';
+    const prefix = iid + '_';
+
+    const toplamEl = inst.el.querySelector(`[id$="_${toplamSuffixes[tid]}"]`);
+    const paraEl   = inst.el.querySelector(`[id$="_${paraSuffixes[tid]}"]`);
+    const birimEl  = inst.el.querySelector(`[id$="_${birimSuffixes[tid]}"]`);
+    const adetKey  = adetSuffixes[tid];
+    const adetEl   = adetKey ? inst.el.querySelector(`[id$="_${adetKey}"]`) : null;
+
+    const birim = parseFloat(birimEl?.value?.replace(',','.')) || 0;
+    const adet  = adetEl ? (parseFloat(adetEl.value.replace(',','.')) || 1) : 1;
+    const para  = paraEl?.value || 'TL';
+
+    // Orijinal tutar (sayısal)
+    let origNum = birim * adet;
+    const origSym = SYMS[para] || '';
+
+    // TL karşılığı
+    let tlNum = 0;
+    if (para === 'TL') tlNum = origNum;
+    else if (para === 'USD' && kurUsd > 0) tlNum = origNum * kurUsd;
+    else if (para === 'EUR' && kurEur > 0) tlNum = origNum * kurEur;
+
+    // USD karşılığı
+    let usdNum = 0;
+    if (para === 'USD') usdNum = origNum;
+    else if (para === 'TL' && kurUsd > 0) usdNum = origNum / kurUsd;
+    else if (para === 'EUR' && kurEur > 0 && kurUsd > 0) usdNum = (origNum * kurEur) / kurUsd;
+
+    // EUR karşılığı
+    let eurNum = 0;
+    if (para === 'EUR') eurNum = origNum;
+    else if (para === 'TL' && kurEur > 0) eurNum = origNum / kurEur;
+    else if (para === 'USD' && kurUsd > 0 && kurEur > 0) eurNum = (origNum * kurUsd) / kurEur;
+
+    grandTL  += tlNum;
+    grandUSD += usdNum;
+    grandEUR += eurNum;
+
+    const fmt = (n, sym) => n > 0 ? sym + n.toLocaleString('tr-TR', {minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+
+    rows.push({
+      idx, name: inst.name || tid, para, origNum, origSym, birim, adet,
+      tlNum, usdNum, eurNum, fmt
+    });
+    idx++;
+  });
+
+  // Tablo render
+  let html = `<table class="ozet-table">
+    <thead><tr>
+      <th>#</th>
+      <th>Ürün / Hizmet</th>
+      <th class="right">Birim Fiyat</th>
+      <th style="text-align:center">Adet</th>
+      <th class="right">Tutar (Orig.)</th>
+      <th class="right">Tutar (₺ TL)</th>
+      <th class="right">Tutar ($ USD)</th>
+    </tr></thead>
+    <tbody>`;
+
+  rows.forEach(r => {
+    const origStr = r.origNum > 0 ? r.origSym + r.origNum.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+    const birimStr = r.birim > 0 ? r.origSym + r.birim.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+    html += `<tr>
+      <td class="ozet-no">${r.idx}</td>
+      <td class="ozet-name">${r.name}<span class="ozet-currency">${r.para}</span></td>
+      <td class="ozet-birim" style="text-align:right">${birimStr}</td>
+      <td class="ozet-adet">${r.adet > 1 ? r.adet : '—'}</td>
+      <td class="ozet-tutar-orig">${origStr}</td>
+      <td class="ozet-tutar-tl">${r.fmt(r.tlNum,'₺')}</td>
+      <td class="ozet-tutar-usd">${r.fmt(r.usdNum,'$')}</td>
+    </tr>`;
+  });
+
+  html += `</tbody>`;
+
+  // Toplam satırı
+  const fmtGrand = (n,sym) => n > 0 ? sym + n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+  html += `<tfoot>
+    <tr class="ozet-footer">
+      <td colspan="4" class="ozet-footer-label">GENEL TOPLAM</td>
+      <td class="ozet-footer-label" style="text-align:right">KDV HARİÇ</td>
+      <td class="ozet-footer-tl">${fmtGrand(grandTL,'₺')}</td>
+      <td class="ozet-footer-usd">${fmtGrand(grandUSD,'$')}</td>
+    </tr>`;
+
+  if (grandEUR > 0) {
+    html += `<tr class="ozet-footer">
+      <td colspan="6" class="ozet-footer-label" style="text-align:right;font-size:11px">EUR Karşılığı</td>
+      <td class="ozet-footer-eur">${fmtGrand(grandEUR,'€')}</td>
+    </tr>`;
+  }
+
+  html += `</tfoot></table>`;
+  body.innerHTML = html;
+
+}
+
 function renderSidebarModules() {
   const container = document.getElementById('sidebar-modules');
   if (!container) return;
@@ -926,9 +1339,89 @@ function getActiveInstanceEls() {
   return els;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadUrunler();
   renderSidebarModules();
-  loadForm(); // Önceki oturumu yükle
+  loadForm();
+  updateOzet();
+});
+
+// ── PDF DROPDOWN ──
+function togglePdfMenu() {
+  document.getElementById('pdfMenu').classList.toggle('open');
+}
+function closePdfMenu() {
+  document.getElementById('pdfMenu').classList.remove('open');
+}
+// Dışarı tıklayınca kapat
+document.addEventListener('click', (e) => {
+  if (!document.getElementById('pdfDropdown')?.contains(e.target)) closePdfMenu();
+});
+
+// ── HESAPLAMA ──
+const CURRENCY_SYMBOLS = { TL: '₺', USD: '$', EUR: '€', GBP: '£' };
+
+function calcTotal(triggerEl, adetSuffix) {
+  // triggerEl: birim fiyat input'u veya adet input'u
+  // En yakın .section-body veya .form-section içinde ilgili alanları bul
+  const container = triggerEl.closest('.section-body') || triggerEl.closest('.form-section') || triggerEl.closest('[data-module]') || document;
+
+  // ID suffix'i çıkar (inst_1_k1_birim → k1_birim, k1_birim → k1_birim)
+  const fullId = triggerEl.id;
+  // Prefix: inst_N_ kısmını at
+  const baseId = fullId.replace(/^inst_\d+_/, '');
+  // birim, para, toplam, adet suffix'lerini bul
+  let birimSuffix, paraSuffix, toplamSuffix;
+  if (baseId.endsWith('_birim')) {
+    birimSuffix = baseId.replace('_birim', '');
+  } else if (adetSuffix) {
+    birimSuffix = adetSuffix;
+  } else {
+    // adet gibi suffix'i çıkar
+    birimSuffix = baseId.replace(/_adet$|_miktar$|_alan$/, '');
+  }
+
+  // ID prefix'ini bul (inst_N_ kısmı)
+  const idPrefix = fullId.replace(baseId, '');
+
+  // Alanları bul
+  const birimEl  = container.querySelector(`[id="${idPrefix}${birimSuffix}_birim"]`)  || document.getElementById(`${idPrefix}${birimSuffix}_birim`);
+  const paraEl   = container.querySelector(`[id="${idPrefix}${birimSuffix}_para"]`)   || document.getElementById(`${idPrefix}${birimSuffix}_para`);
+  const toplamEl = container.querySelector(`[id="${idPrefix}${birimSuffix}_toplam"]`) || document.getElementById(`${idPrefix}${birimSuffix}_toplam`);
+
+  // Adet alanı: önce tanımlanan adetSuffix dene, sonra yaygın sufixleri tara
+  let adetEl = null;
+  const adetSuffixes = [`${birimSuffix}_adet`, `${birimSuffix}_miktar`, `${birimSuffix}_alan`];
+  for (const s of adetSuffixes) {
+    adetEl = container.querySelector(`[id="${idPrefix}${s}"]`) || document.getElementById(`${idPrefix}${s}`);
+    if (adetEl) break;
+  }
+
+  if (!birimEl || !toplamEl) return;
+
+  const birim = parseFloat(birimEl.value.replace(',', '.')) || 0;
+  const adet  = adetEl ? (parseFloat(adetEl.value.replace(',', '.')) || 1) : 1;
+  const toplam = birim * adet;
+  const sym = paraEl ? (CURRENCY_SYMBOLS[paraEl.value] || '') : '';
+
+  if (birim > 0) {
+    toplamEl.value = sym + toplam.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  } else {
+    toplamEl.value = '';
+  }
+  updateOzet();
+}
+
+// Para birimi değişince toplam yeniden hesapla
+document.addEventListener('change', (e) => {
+  if (e.target.classList.contains('currency-select')) {
+    const fullId = e.target.id;
+    const baseId = fullId.replace(/^inst_\d+_/, '');
+    const idPrefix = fullId.replace(baseId, '');
+    const birimSuffix = baseId.replace('_para', '');
+    const birimEl = document.querySelector(`[id="${idPrefix}${birimSuffix}_birim"]`) || document.getElementById(`${idPrefix}${birimSuffix}_birim`);
+    if (birimEl) calcTotal(birimEl);
+  }
 });
 
 // ── TOAST ──
@@ -1025,8 +1518,8 @@ function loadForm() {
 }
 
 // Tüm input değişikliklerini izle
-document.addEventListener('input', autoSave);
-document.addEventListener('change', autoSave);
+document.addEventListener('input', () => { autoSave(); updateOzet(); });
+document.addEventListener('change', () => { autoSave(); updateOzet(); });
 
 // ── ZORUNLU ALAN VALİDASYONU ──
 const REQUIRED_FIELDS = [
@@ -1098,7 +1591,7 @@ function getCbs(ids) {
 }
 
 // ── PDF GENERATİON ──
-async function generatePDF() {
+async function generatePDF(showPrices = true) {
   const overlay = document.getElementById('pdfOverlay');
   overlay.classList.add('show');
   overlay.querySelector('.pdf-text').textContent = 'Hazırlanıyor...';
@@ -1120,21 +1613,24 @@ async function generatePDF() {
 
     // 3 grup: [header+bilgiler], [satış modülleri], [ödeme+diğer]
     // Her grup elementlerden oluşur — id yerine element listesi kullanıyoruz
+    // Sayfa 1: Header + Genel + Firma + Soru
     const grup1Els = [pdfHeader,
       document.getElementById('genel'),
       document.getElementById('firma'),
       document.getElementById('soru')
     ].filter(Boolean);
 
-    const instEls = getActiveInstanceEls();
-    const grup2Els = instEls.length > 0
-      ? [...instEls]
-      : [];
+    // Sayfa 2: Kur + Satış Özeti (modüller yok)
+    const grup2Els = [
+      document.getElementById('kur-panel'),
+      document.getElementById('ozet-panel')
+    ].filter(Boolean);
 
-    const grup3Ids = ['odeme','teslimat'];
-    const grup4Ids = ['isi','ekstra','onay'];
-    const grup3Els = grup3Ids.map(id => document.getElementById(id)).filter(Boolean);
-    const grup4Els = grup4Ids.map(id => document.getElementById(id)).filter(Boolean);
+    // Sayfa 3: Ödeme + Teslimat
+    const grup3Els = ['odeme','teslimat'].map(id => document.getElementById(id)).filter(Boolean);
+
+    // Sayfa 4: Isı Kaynağı + Ek Bilgiler + Onay
+    const grup4Els = ['isi','ekstra','onay'].map(id => document.getElementById(id)).filter(Boolean);
 
     const elGroups = [grup1Els, grup2Els, grup3Els, grup4Els].filter(g => g.length > 0);
 
@@ -1153,7 +1649,7 @@ async function generatePDF() {
         'position:fixed', 'left:-9999px', 'top:0',
         'width:780px', 'background:#F0EFED',
         'padding:14px 18px', 'box-sizing:border-box',
-        'font-family:Segoe UI,sans-serif', 'z-index:-1'
+        'font-family:Segoe UI,sans-serif', 'font-size:15px', 'z-index:-1'
       ].join(';');
 
       origEls.forEach(orig => {
@@ -1188,6 +1684,23 @@ async function generatePDF() {
           div.textContent = ta.value || ' ';
           ta.replaceWith(div);
         });
+
+        // Fiyat satırlarını gizle (showPrices=false ise)
+        if (!showPrices) {
+          clone.querySelectorAll('.price-row').forEach(row => {
+            row.style.display = 'none';
+          });
+          // Birim Fiyat ve Toplam Tutar etiketli hücreleri de gizle
+          clone.querySelectorAll('.field-label.price-label').forEach(lbl => {
+            const row = lbl.closest('.form-row');
+            if (row) row.style.display = 'none';
+          });
+          // Ödeme tablosundaki tutar sütunlarını maskele
+          clone.querySelectorAll('.odeme-table td input').forEach(inp => {
+            const th = inp.closest('td');
+            if (th) { /* handled below */ }
+          });
+        }
 
         // Checkbox/radio → sembol
         clone.querySelectorAll('input[type=checkbox]').forEach(cb => {
@@ -1262,7 +1775,8 @@ async function generatePDF() {
         doc.line(M, PH-6, PW-M, PH-6);
         doc.setFontSize(7); doc.setTextColor(180,180,180);
         const formVer = new Date().toLocaleDateString('tr-TR');
-        doc.text(`POD Formu  |  ${formVer}`, M, PH-3);
+        const pdfTur = showPrices ? 'Tam Versiyon' : 'Müşteri Versiyonu';
+        doc.text(`POD Formu  |  ${pdfTur}  |  ${formVer}`, M, PH-3);
 
         srcY += sliceH;
       }
@@ -1278,8 +1792,9 @@ async function generatePDF() {
 
     cleanupPdf();
     const tarih = new Date().toISOString().slice(0,10);
-    const fa = document.getElementById('firma_adi')?.value?.replace(/[^a-zA-Z0-9À-ɏ]/g,'_') || 'POD';
-    doc.save(`ENORPA_POD_${fa}_${tarih}.pdf`);
+    const fa = document.getElementById('firma_adi')?.value?.replace(/[^a-zA-Z0-9\u00C0-\u024F]/g,'_') || 'POD';
+    const suffix = showPrices ? '' : '_musteri';
+    doc.save(`ENORPA_POD_${fa}${suffix}_${tarih}.pdf`);
 
   } catch(e) {
     console.error(e);
@@ -1289,4 +1804,303 @@ async function generatePDF() {
 
   overlay.classList.remove('show');
 }
-</script></html>
+
+// ── ÜRÜN YELPAZESİ ──────────────────────────────────────────────────────────
+const URUN_KEY = 'enorpa_urun_yelpazesi';
+
+// Varsayılan ürünler (verilen liste)
+const DEFAULT_URUNLER = [
+  {id:1,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 510 kW 3 Bar',kod:'AK510-3',yakit:'Sıvı/Gaz Yakıtlı'},
+  {id:2,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 660 kW 3 Bar',kod:'AK660-3',yakit:'Sıvı/Gaz Yakıtlı'},
+  {id:3,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 810 kW 3 Bar',kod:'AK810-3',yakit:'Sıvı/Gaz Yakıtlı'},
+  {id:4,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 960 kW 3 Bar',kod:'AK960-3',yakit:'Sıvı/Gaz Yakıtlı'},
+  {id:5,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 1200 kW 3 Bar',kod:'AK1200-3',yakit:'Sıvı/Gaz Yakıtlı'},
+  {id:6,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 1500 kW 3 Bar',kod:'AK1500-3',yakit:'Sıvı/Gaz Yakıtlı'},
+  {id:7,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 1800 kW 3 Bar',kod:'AK1800-3',yakit:'Sıvı/Gaz Yakıtlı'},
+  {id:8,ust:'Kazan',alt:'Sıcak Su Kazanı',detay:'Akuamarin 2400 kW 3 Bar',kod:'AK2400-3',yakit:'Sıvı/Gaz Yakıtlı'},
+];
+
+let urunler = [];
+let urunIdCounter = 100;
+
+// GitHub raw URL — repository adresinize göre otomatik belirlenir
+const GITHUB_JSON_URL = (() => {
+  const host = window.location.hostname;
+  const path = window.location.pathname.replace('/index.html','').replace(/\/$/, '');
+  if (host.includes('github.io')) {
+    // enorpabilgiislem.github.io/Enorpa-Pod → raw.githubusercontent.com/enorpabilgiislem/Enorpa-Pod/main/urunler.json
+    const user = host.replace('.github.io', '');
+    const repo = path.replace('/', '') || 'Enorpa-Pod';
+    return `https://raw.githubusercontent.com/${user}/${repo}/main/urunler.json`;
+  }
+  return null; // localhost veya farklı host — sadece localStorage/default kullan
+})();
+
+async function loadUrunler() {
+  // 1. Önce GitHub'dan çekmeyi dene
+  if (GITHUB_JSON_URL) {
+    try {
+      const res = await fetch(GITHUB_JSON_URL + '?t=' + Date.now()); // cache bypass
+      if (res.ok) {
+        const data = await res.json();
+        urunler = data.urunler || DEFAULT_URUNLER;
+        urunIdCounter = Math.max(...urunler.map(u => u.id), 100) + 1;
+        // GitHub'dan geleni localStorage'a da yaz (offline fallback)
+        try { localStorage.setItem(URUN_KEY, JSON.stringify({ urunler, counter: urunIdCounter, source: 'github' })); } catch(e){}
+        refreshKazanSelects();
+        return;
+      }
+    } catch(e) {
+      console.warn('GitHub JSON yüklenemedi, localStorage/varsayılana düşülüyor:', e.message);
+    }
+  }
+
+  // 2. GitHub başarısızsa localStorage'a bak
+  try {
+    const raw = localStorage.getItem(URUN_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      // Eğer localStorage'daki veri manuel düzenleme ise onu kullan
+      // GitHub'dan geldiyse ve GitHub ulaşılamıyorsa yine kullan
+      urunler = parsed.urunler || DEFAULT_URUNLER;
+      urunIdCounter = parsed.counter || (Math.max(...urunler.map(u => u.id), 100) + 1);
+      refreshKazanSelects();
+      return;
+    }
+  } catch(e) {}
+
+  // 3. Hiçbiri yoksa varsayılan liste
+  urunler = [...DEFAULT_URUNLER];
+  urunIdCounter = 20;
+  refreshKazanSelects();
+}
+
+function saveUrunler() {
+  // localStorage'a kaydet (geçici, bu sekme için)
+  try {
+    localStorage.setItem(URUN_KEY, JSON.stringify({ urunler, counter: urunIdCounter, source: 'local' }));
+  } catch(e) {}
+  refreshKazanSelects();
+
+  // GitHub'da çalışıyorsa kalıcı güncelleme için JSON indirmeyi öner
+  if (GITHUB_JSON_URL) {
+    showToast('💡 Kalıcı kayıt için CSV/JSON indirip GitHub'a yükleyin', 'info', 5000);
+  }
+}
+
+function refreshKazanSelects() {
+  // Kazan modülündeki tüm select'leri güncelle
+  document.querySelectorAll('.kazan-model-select').forEach(sel => {
+    const current = sel.value;
+    sel.innerHTML = '<option value="">— Ürün Seçin —</option>';
+    // Ürünleri alt başlığa göre grupla
+    const groups = {};
+    urunler.forEach(u => {
+      const grp = u.alt || u.ust || 'Diğer';
+      if (!groups[grp]) groups[grp] = [];
+      groups[grp].push(u);
+    });
+    Object.entries(groups).forEach(([grpName, items]) => {
+      const og = document.createElement('optgroup');
+      og.label = grpName;
+      items.forEach(u => {
+        const opt = document.createElement('option');
+        opt.value = u.id;
+        opt.textContent = u.detay + (u.kod ? ` (${u.kod})` : '');
+        opt.dataset.detay = u.detay;
+        opt.dataset.kod = u.kod || '';
+        opt.dataset.yakit = u.yakit || '';
+        opt.dataset.alt = u.alt || '';
+        og.appendChild(opt);
+      });
+      sel.appendChild(og);
+    });
+    if (current) sel.value = current;
+  });
+}
+
+function onKazanModelChange(sel) {
+  // En yakın section-body içindeki kapasite ve yakıt alanlarını doldur
+  const body = sel.closest('.section-body') || sel.closest('.form-section');
+  const opt = sel.options[sel.selectedIndex];
+  const kapasiteEl = body?.querySelector('[id$="k1_kapasite"]');
+  const yakitEl = body?.querySelector('[id$="k1_yakit"]');
+
+  if (opt && opt.value) {
+    if (kapasiteEl) kapasiteEl.value = opt.dataset.detay || '';
+    if (yakitEl) yakitEl.value = opt.dataset.yakit || '';
+  } else {
+    if (kapasiteEl) kapasiteEl.value = '';
+    if (yakitEl) yakitEl.value = '';
+  }
+  autoSave();
+}
+
+// ── Modal Aç/Kapat ──
+function openUrunModal() {
+  renderUrunTable();
+  document.getElementById('urunModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  // GitHub URL bilgisi
+  const infoDiv = document.getElementById('githubInfo');
+  const urlSpan = document.getElementById('githubUrl');
+  if (GITHUB_JSON_URL && infoDiv && urlSpan) {
+    urlSpan.textContent = GITHUB_JSON_URL;
+    infoDiv.style.display = 'block';
+  }
+}
+function closeUrunModal() {
+  document.getElementById('urunModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeUrunModal(); });
+
+// ── Tablo Render ──
+function renderUrunTable() {
+  const ara = document.getElementById('urunAra')?.value?.toLowerCase() || '';
+  const filtered = urunler.filter(u =>
+    !ara || [u.ust,u.alt,u.detay,u.kod,u.yakit].join(' ').toLowerCase().includes(ara)
+  );
+  const tbody = document.getElementById('urunTableBody');
+  if (!tbody) return;
+
+  tbody.innerHTML = filtered.map((u, i) => `
+    <tr style="background:${i%2===0?'#fff':'#F4F4F4'};border-bottom:1px solid #E8E8E8">
+      <td style="padding:8px 12px;color:#888;font-size:12px">${i+1}</td>
+      <td style="padding:8px 12px"><span style="background:#E8E8E8;border-radius:3px;padding:2px 7px;font-size:11px;font-weight:700;color:#404040">${esc(u.ust)}</span></td>
+      <td style="padding:8px 12px;color:#6B6B6B;font-size:12px">${esc(u.alt)}</td>
+      <td style="padding:8px 12px;font-weight:600;color:#1A1A1A">${esc(u.detay)}</td>
+      <td style="padding:8px 12px"><code style="background:#F0EFED;padding:2px 6px;border-radius:3px;font-size:12px;color:#E8501A">${esc(u.kod)}</code></td>
+      <td style="padding:8px 12px;color:#6B6B6B;font-size:12px">${esc(u.yakit)}</td>
+      <td style="padding:8px 12px;text-align:center;white-space:nowrap">
+        <button onclick="editUrun(${u.id})" style="background:transparent;border:1px solid #D0D0D0;color:#404040;padding:3px 10px;border-radius:3px;font-size:11px;cursor:pointer;margin-right:4px;font-family:inherit">Düzenle</button>
+        <button onclick="deleteUrun(${u.id})" style="background:transparent;border:1px solid #E8501A;color:#E8501A;padding:3px 10px;border-radius:3px;font-size:11px;cursor:pointer;font-family:inherit">Sil</button>
+      </td>
+    </tr>`).join('');
+
+  const countEl = document.getElementById('urunCount');
+  if (countEl) countEl.textContent = `${urunler.length} ürün${ara ? ` (${filtered.length} sonuç)` : ''}`;
+}
+
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ── CRUD ──
+function showUrunForm(data=null) {
+  const form = document.getElementById('urunForm');
+  form.style.display = 'block';
+  document.getElementById('f_ust').value   = data?.ust   || '';
+  document.getElementById('f_alt').value   = data?.alt   || '';
+  document.getElementById('f_detay').value = data?.detay || '';
+  document.getElementById('f_kod').value   = data?.kod   || '';
+  document.getElementById('f_yakit').value = data?.yakit || '';
+  document.getElementById('f_editId').value = data?.id   || '';
+  document.getElementById('f_ust').focus();
+}
+function cancelUrunForm() {
+  document.getElementById('urunForm').style.display = 'none';
+}
+function saveUrun() {
+  const detay = document.getElementById('f_detay').value.trim();
+  const ust   = document.getElementById('f_ust').value.trim();
+  const alt   = document.getElementById('f_alt').value.trim();
+  if (!detay || !ust) { showToast('Üst Başlık ve Detay zorunlu', 'warning'); return; }
+
+  const editId = parseInt(document.getElementById('f_editId').value) || 0;
+  const urun = {
+    id: editId || urunIdCounter++,
+    ust, alt,
+    detay,
+    kod:   document.getElementById('f_kod').value.trim(),
+    yakit: document.getElementById('f_yakit').value.trim(),
+  };
+
+  if (editId) {
+    const idx = urunler.findIndex(u => u.id === editId);
+    if (idx >= 0) urunler[idx] = urun;
+  } else {
+    urunler.push(urun);
+  }
+  saveUrunler();
+  cancelUrunForm();
+  renderUrunTable();
+  showToast(editId ? 'Ürün güncellendi' : 'Ürün eklendi', 'success');
+}
+function editUrun(id) {
+  const u = urunler.find(x => x.id === id);
+  if (u) showUrunForm(u);
+}
+function deleteUrun(id) {
+  if (!confirm('Bu ürünü silmek istediğinize emin misiniz?')) return;
+  urunler = urunler.filter(u => u.id !== id);
+  saveUrunler();
+  renderUrunTable();
+  showToast('Ürün silindi', 'info');
+}
+function tumunuSil() {
+  if (!confirm('Tüm ürünleri silmek istediğinize emin misiniz? Bu işlem geri alınamaz!')) return;
+  urunler = [];
+  saveUrunler();
+  renderUrunTable();
+  showToast('Tüm ürünler silindi', 'info');
+}
+
+// ── CSV İşlemleri ──
+function csvIndir() {
+  const header = 'Ust Baslik,Alt Baslik,Detay,Kod,Yakit Tipi';
+  const rows = urunler.map(u => `"${u.ust}","${u.alt}","${u.detay}","${u.kod}","${u.yakit}"`);
+  const csv = [header, ...rows].join('
+');
+  const blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'ENORPA_Urun_Yelpazesi.csv';
+  a.click();
+}
+function ornekCsvIndir() {
+  const csv = 'Ust Baslik,Alt Baslik,Detay,Kod,Yakit Tipi
+"Kazan","Sıcak Su Kazanı","Akuamarin 510 kW 3 Bar","AK510-3","Sıvı/Gaz Yakıtlı"
+"Kazan","Buhar Kazanı","Kuvars 1000 kW","KV1000","Gaz Yakıtlı"';
+  const blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'ENORPA_Urun_Ornek.csv';
+  a.click();
+}
+function csvYukle(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const lines = e.target.result.replace(/
+/g,'').split('
+').filter(l=>l.trim());
+      const header = lines[0].toLowerCase();
+      let added = 0;
+      for (let i = 1; i < lines.length; i++) {
+        const cols = lines[i].match(/("([^"]*)"|([^,]*))(?:,|$)/g)
+          ?.map(c => c.replace(/^"|"$|,$/g,'').trim()) || [];
+        if (cols.length < 3) continue;
+        urunler.push({
+          id: urunIdCounter++,
+          ust:   cols[0] || '',
+          alt:   cols[1] || '',
+          detay: cols[2] || '',
+          kod:   cols[3] || '',
+          yakit: cols[4] || '',
+        });
+        added++;
+      }
+      saveUrunler();
+      renderUrunTable();
+      showToast(`${added} ürün yüklendi`, 'success');
+    } catch(err) {
+      showToast('CSV okuma hatası: ' + err.message, 'warning');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file, 'UTF-8');
+}
+
+</script>
+</html>
